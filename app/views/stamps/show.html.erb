@@ -5,5 +5,7 @@
   <%= @stamp.description %>
 </p>
 
-<%= link_to 'Edit', edit_stamp_path(@stamp) %> |
-<%= link_to 'Back', stamps_path %>
+<% if @stamp.user == current_user %>
+	<%= link_to 'Edit', edit_stamp_path(@stamp) %> |
+<% end %>
+	<%= link_to 'Back', stamps_path %>

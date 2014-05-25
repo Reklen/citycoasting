@@ -1,6 +1,7 @@
 class StampsController < ApplicationController
   before_action :set_stamp, only: [:show, :edit, :update, :destroy]
-
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @stamps = Stamp.all
@@ -12,7 +13,7 @@ class StampsController < ApplicationController
 
 
   def new
-    @stamp = Stamp.new
+    @stamp = current_user.stamps.build
   end
 
   # GET /stamps/1/edit
@@ -21,7 +22,7 @@ class StampsController < ApplicationController
 
 
   def create
-    @stamp = Stamp.new(stamp_params)
+    @stamp = current_user.stamps.build(stamp_params)
 
     respond_to do |format|
       if @stamp.save
@@ -62,6 +63,11 @@ class StampsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_stamp
       @stamp = Stamp.find(params[:id])
+    end
+
+    def correct_user
+      @stamp = current_user.stamps.find_by(id: params[:id])
+      redirect_to stamps_path, notice: "Not authorized to edit this stamp." if @stamp.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -25,6 +25,11 @@
               <li><a href="#">Add City</a></li>
             </ul>
           </li>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to 'Add Stamp', new_stamp_path %>
+            <% end %>
+          </li>
         </ul>
        
         <ul class="nav navbar-nav navbar-right">

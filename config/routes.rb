@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :stamps
 
   devise_for :users
-  root "pages#home"
+  root "stamps#index"
   get "about" => "pages#about" # creates about_path
   
   # The priority is based upon order of creation: first created -> highest priority.

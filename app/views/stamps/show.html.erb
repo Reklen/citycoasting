@@ -1,11 +1,24 @@
-<%= image_tag @stamp.image.url(:medium) %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @stamp.description %>
-</p>
-
-<% if @stamp.user == current_user %>
-	<%= link_to 'Edit', edit_stamp_path(@stamp) %> |
-<% end %>
-	<%= link_to 'Back', stamps_path %>
+<div class = "row">
+	<div class = "col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading center">
+				<%= image_tag @stamp.image.url(:medium) %>
+			</div>
+			<div class="panel-body">
+				<p>
+				  <strong>Description:</strong>
+				  <%= @stamp.description %>
+				</p>
+				<p><strong><%= @stamp.user.email if @stamp.user %></strong></p>
+				<% if @stamp.user == current_user %>
+					<%= link_to edit_stamp_path(@stamp) do %>
+          	<span class="glyphicon glyphicon-edit"></span>
+            Edit
+          <% end %> |
+				<% end %>
+					<%= link_to 'Back', stamps_path %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,14 +1,21 @@
 <div id="stamps" class="transitions-enabled">
   <% @stamps.each do |stamp| %>
-    <div class="box panel panel-default">
-      <%= image_tag stamp.image.url(:medium) %>
+    <div class="box panel panel-default center">
+      <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
       <div class = "panel-body">
-        <%= stamp.description %>
+        <%= stamp.description %><br>
         <%= stamp.user.email if stamp.user %>
-        <%= link_to 'Show', stamp %>
         <% if stamp.user == current_user %>
-          <%= link_to 'Edit', edit_stamp_path(stamp) %>
-          <%= link_to 'Destroy', stamp, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class ="actions">
+            <%= link_to edit_stamp_path(stamp) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit |
+            <% end %>
+            <%= link_to stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>

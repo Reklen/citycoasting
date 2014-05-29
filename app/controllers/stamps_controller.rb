@@ -4,7 +4,7 @@ class StampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @stamps = Stamp.all
+    @stamps = Stamp.all.order("created_at DESC")
   end
 
 

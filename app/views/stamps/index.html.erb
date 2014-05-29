@@ -1,7 +1,7 @@
 <div id="stamps" class="transitions-enabled">
   <% @stamps.each do |stamp| %>
     <div class="box panel panel-default center">
-      <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
+      <%= link_to image_tag(stamp.image.url), stamp %>
       <div class = "panel-body">
         <%= stamp.description %><br>
         <%= stamp.user.username if stamp.user %>

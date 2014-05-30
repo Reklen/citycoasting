@@ -11,7 +11,7 @@
 				  <%= @stamp.description %>
 				</p>
 				<p><strong><%= @stamp.user.name if @stamp.user %></strong></p>
-				<% if @stamp.user == current_user %>
+				<% if current_user && @stamp.user == current_user %>
 					<%= link_to edit_stamp_path(@stamp) do %>
           	<span class="glyphicon glyphicon-edit"></span>
             Edit

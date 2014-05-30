@@ -5,7 +5,7 @@
       <div class = "panel-body">
         <%= stamp.description %><br>
         <%= stamp.user.username if stamp.user %>
-        <% if stamp.user == current_user %>
+        <% if current_user && stamp.user == current_user %>
           <div class ="actions">
             <%= link_to edit_stamp_path(stamp) do %>
               <span class="glyphicon glyphicon-edit"></span>
@@ -17,6 +17,8 @@
             <% end %>
           </div>
         <% end %>
+        <%= tweet_button %>
+        <%= pinit_button %>
       </div>
     </div>
   <% end %>

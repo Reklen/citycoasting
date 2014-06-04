@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= f.label :category %><br>
+    <%= f.select :category, [["Eat", 1], ["Drink", 2], ["Stay", 3], ["Shop", 4], ["Explore", 5]], {class: "multiple"} %>
+  </div>
 
   <div class="form-group">
     <%= f.label :image %><br>

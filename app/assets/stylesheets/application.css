@@ -13,4 +13,6 @@
  *= require_tree .
  *= require 'masonry/transitions'
  *= require_self
+ *= require 'masonry/infinitescroll'
+
  */

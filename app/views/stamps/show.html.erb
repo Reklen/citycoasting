@@ -17,7 +17,14 @@
             Edit
           <% end %> |
 				<% end %>
-					<%= link_to 'Back', stamps_path %>
+				<div class = "pull-left">
+        	<%= render 'stamps/pricerange_key', :stamp => stamp %> #Need to add @stamp in many locations-check partial
+        </div>
+        <div class = "pull-right">
+          <%= render 'stamps/category_key', :stamp => stamp %>
+        </div>
+				<%= link_to 'Back', stamps_path %>
+
 			</div>
 		</div>
 	</div>

@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140604043424) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "username"
+    t.string   "username", unique: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

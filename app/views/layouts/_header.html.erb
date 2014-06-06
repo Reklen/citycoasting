@@ -24,15 +24,9 @@
             </ul>
           </li>
           <li>
-            <% if user_signed_in? %>
               <%= link_to new_stamp_path do %>
                <span class="glyphicon glyphicon-plus"></span> Add Stamp
               <% end %>
-            <% else %>
-              <%= link_to new_user_registration_path do %>
-               <span class="glyphicon glyphicon-plus"></span> Add Stamp
-              <% end %>
-            <% end %>
           </li>
         </ul>
        

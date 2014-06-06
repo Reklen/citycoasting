@@ -4,7 +4,7 @@ class StampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @stamps = Stamp.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+    @stamps = Stamp.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
     respond_to do |format|
         format.html
         format.js

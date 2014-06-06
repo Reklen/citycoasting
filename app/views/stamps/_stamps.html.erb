@@ -1,9 +1,9 @@
 <% @stamps.each do |stamp| %>
-    <div class="box panel panel-default center">
+  <div class="box panel panel-default">
+    <div class = "center">
       <%= link_to image_tag(stamp.image.url), stamp %>
       <div class = "panel-body">
         <%= stamp.description %><br>
-        <%= stamp.category %><br>
         <p><strong><%= stamp.user.username if stamp.user %></strong></p><br>
         <% if current_user && stamp.user == current_user %>
           <div class ="actions">
@@ -17,7 +17,10 @@
             <% end %>
           </div>
         <% end %>
-        <br>
+        <div class = "pull-right">
+          <%= render 'stamps/category_key', :stamp => stamp %>
+        </div>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>

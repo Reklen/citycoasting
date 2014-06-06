@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604043424) do
+ActiveRecord::Schema.define(version: 20140606050258) do
 
   create_table "stamps", force: true do |t|
     t.string   "description"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140604043424) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category"
+    t.integer  "price_range"
   end
 
   add_index "stamps", ["category"], name: "index_stamps_on_category"

@@ -11,7 +11,16 @@
 				  <%= @stamp.description %>
 				</p>
 				<p><strong><%= @stamp.user.name if @stamp.user %></strong></p>
-				<% if current_user && @stamp.user == current_user %>
+
+				<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
+
+				<div class = "pull-left">
+        	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
+        </div>
+        <div class = "pull-right">
+          <%= render 'stamps/category_key', :stamp => @stamp %>
+        </div><br>
+        <% if current_user && @stamp.user == current_user %>
 					
 					<%= link_to edit_stamp_path(@stamp) do %>
           	<span class="glyphicon glyphicon-edit"></span>
@@ -24,15 +33,6 @@
 	        	<span class="glyphicon glyphicon-trash"></span>Delete
 	        <% end %><br>
         <% end %>
-
-				<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
-				
-				<div class = "pull-left">
-        	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
-        </div>
-        <div class = "pull-right">
-          <%= render 'stamps/category_key', :stamp => @stamp %>
-        </div>
 			</div>
 		</div>
 	</div>

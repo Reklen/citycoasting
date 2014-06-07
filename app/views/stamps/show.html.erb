@@ -12,13 +12,21 @@
 				</p>
 				<p><strong><%= @stamp.user.name if @stamp.user %></strong></p>
 				<% if current_user && @stamp.user == current_user %>
+					
 					<%= link_to edit_stamp_path(@stamp) do %>
           	<span class="glyphicon glyphicon-edit"></span>
             Edit
           <% end %> |
-				<% end %>
-				<%= link_to 'Back', stamps_path %><br>
+
+					<%= link_to 'Back', stamps_path %> |
+
+					<%= link_to @stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
+	        	<span class="glyphicon glyphicon-trash"></span>Delete
+	        <% end %><br>
+        <% end %>
+
 				<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
+				
 				<div class = "pull-left">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
         </div>

@@ -3,9 +3,9 @@
     <div class = "center">
       <%= link_to image_tag(stamp.image.url), stamp %>
       <div class = "panel-body">
-        <%= stamp.description %>
+        <%= stamp.description %><br>
+        <%= render 'stamps/neighborhood_key', :stamp => stamp %><br>  
         <p><strong><%= stamp.user.username if stamp.user %></strong></p>
-        <%= render 'stamps/neighborhood_key', :stamp => stamp %><br>
         <div class = "pull-left">
           <%= render 'stamps/pricerange_key', :stamp => stamp %>
         </div>

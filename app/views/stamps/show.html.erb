@@ -18,6 +18,7 @@
           <% end %> |
 				<% end %>
 				<%= link_to 'Back', stamps_path %><br>
+				<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
 				<div class = "pull-left">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
         </div>

@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  
   <div class="form-group">
     <%= f.label :category %><br>
     <%= f.select :category, [["Eat", 1], ["Drink", 2], ["Stay", 3], ["Shop", 4], ["Explore", 5]], {class: "multiple dropdown"} %>
@@ -18,6 +19,11 @@
   <div class="form-group">
     <%= f.label :price_range %><br>
     <%= f.select :price_range, [["Free", 1], ["$", 2], ["$$", 3], ["$$$", 4]], {class: "multiple dropdown"} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :neighborhood %><br>
+    <%= f.select :neighborhood, [["Chelsea", 1], ["East Village", 2], ["Financial District", 3], ["Greenwich Village", 4], ["Lower East Side", 5],["NoLita", 6],["Soho", 7],["West Village", 8]], {class: "multiple dropdown"} %>
   </div>
 
   <div class="form-group">

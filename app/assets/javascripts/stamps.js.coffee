@@ -1,3 +1,5 @@
+$(document.body).on
+
 $ ->
 	$('#stamps').imagesLoaded ->
 		$('#stamps').masonry

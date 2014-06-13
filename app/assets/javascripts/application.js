@@ -17,4 +17,5 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require masonry/jquery.masonry
+//= require geocomplete
 //= require_tree .

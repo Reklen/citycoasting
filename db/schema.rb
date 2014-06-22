@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607003001) do
+ActiveRecord::Schema.define(version: 20140622185214) do
 
   create_table "stamps", force: true do |t|
     t.string   "description"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140607003001) do
     t.integer  "category"
     t.integer  "price_range"
     t.integer  "neighborhood"
+    t.string   "name"
   end
 
   add_index "stamps", ["category"], name: "index_stamps_on_category"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140607003001) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "username"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

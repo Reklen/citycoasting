@@ -72,8 +72,9 @@
   var placesDetails = ("id url website vicinity reference name rating " +
     "international_phone_number icon formatted_phone_number").split(" ");
 
+
   // The actual plugin constructor.
-  function GeoComplete(input, options) {
+  function GeoComplete(input, options) {  
 
     this.options = $.extend(true, {}, defaults, options);
 
@@ -460,6 +461,7 @@
       }
     }
   });
+
 
   // A plugin wrapper around the constructor.
   // Pass `options` with all settings that are different from the default.

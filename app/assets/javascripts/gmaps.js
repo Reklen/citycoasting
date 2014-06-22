@@ -1,7 +1,8 @@
       $(function(){
         $("#geocomplete").geocomplete({
           details: "form",
-          types: ["geocode", "establishment"],
+          types: ["establishment"],
+          detailsAttribute: "id"
         });
 
         $("#find").click(function(){

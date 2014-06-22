@@ -21,7 +21,7 @@
         <div class = "pull-right">
           <%= render 'stamps/category_key', :stamp => @stamp %>
         </div><br>
-        <% if (current_user && @stamp.user == current_user) || (current_user.role ="admin")  %>
+        <% if (current_user && @stamp.user == current_user) %>
 					
 					<%= link_to edit_stamp_path(@stamp) do %>
           	<span class="glyphicon glyphicon-edit"></span>

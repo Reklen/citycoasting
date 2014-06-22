@@ -2,7 +2,7 @@ class StampsController < ApplicationController
   before_action :set_stamp, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-
+  
   def index
     @stamps = Stamp.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
     respond_to do |format|
@@ -71,6 +71,7 @@ class StampsController < ApplicationController
 
     def correct_user
       @stamp = current_user.stamps.find_by(id: params[:id])
+
       redirect_to stamps_path, notice: "Not authorized to edit this stamp." if @stamp.nil?
     end
 

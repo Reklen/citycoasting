@@ -22,6 +22,10 @@
     <%= f.label :adr_street_number %>
     <%= f.text_field :adr_street_number, class: "form-control",id:"street_number", type:"hidden" %>     
   </div>
+    <div class="form-group">
+    <%= f.label :adr_route %>
+    <%= f.text_field :adr_route, class: "form-control",id:"route", type:"hidden" %>     
+  </div>
   <div class="form-group">
     <%= f.label :category %><br>
     <%= f.select :category, [["Eat", 1], ["Drink", 2], ["Stay", 3], ["Shop", 4], ["Explore", 5]], {class: "multiple dropdown"} %>

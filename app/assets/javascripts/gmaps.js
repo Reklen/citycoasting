@@ -2,7 +2,7 @@
         $("#geocomplete").geocomplete({
           details: "form",
           types: ["establishment"],
-          detailsAttribute: "id"
+          detailsAttribute: "id",
         });
 
         $("#find").click(function(){

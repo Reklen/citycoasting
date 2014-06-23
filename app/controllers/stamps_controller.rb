@@ -80,6 +80,6 @@ class StampsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stamp_params
-      params.require(:stamp).permit(:description, :image, :category, :price_range, :neighborhood, :name, :adr_street_number, :adr_route, :adr_city, :adr_postal_code, :adr_state, :adr_country, :phone_number, :id, :adr_lat, :adr_lng, :website, :adr_coord_lat, :adr_coord_lng, :google_place_id)
+      params.require(:stamp).permit(:description, :image, :category, :price_range, :neighborhood, :name, :adr_street_number, :adr_route, :adr_city, :adr_postal_code, :adr_state, :adr_country, :phone_number, :id, :adr_lat, :adr_lng, :website, :adr_coord_lat, :adr_coord_lng, :google_place_id, :formatted_address)
     end
 end

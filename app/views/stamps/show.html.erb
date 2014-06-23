@@ -8,12 +8,12 @@
 				<%= image_tag @stamp.image.url(:large) %>
 			</div>
 			<div class="panel-body center">
-				<p>
+				<p><%= @stamp.name if @stamp.name %><br>
+					<%= @stamp.formatted_address if @stamp.formatted_address %><br>
+					<strong><%= @stamp.user.name if @stamp.user %></strong>
 				  <strong>Description:</strong>
 				  <%= @stamp.description %>
 				</p>
-				<p><strong><%= @stamp.user.name if @stamp.user %></strong><br>
-					<%= @stamp.name if @stamp.name %></p>
 
 				<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
 

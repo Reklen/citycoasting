@@ -31,6 +31,10 @@
     <%= f.text_field :adr_city, class: "form-control",id:"locality", type:"text" %>     
   </div>
   <div class="form-group">
+    <%= f.label :adr_postal_code %>
+    <%= f.text_field :adr_postal_code, class: "form-control",id:"postal_code", type:"text" %>     
+  </div>
+  <div class="form-group">
     <%= f.label :category %><br>
     <%= f.select :category, [["Eat", 1], ["Drink", 2], ["Stay", 3], ["Shop", 4], ["Explore", 5]], {class: "multiple dropdown"} %>
   </div>
@@ -52,7 +56,7 @@
 
   <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description,id: "locality", class: "form-control" %>
+    <%= f.text_field :description,id: "administrative_area_level_1", class: "form-control" %>
   </div>
 
   <div class="form-group">

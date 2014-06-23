@@ -9,7 +9,11 @@
 			</div>
 			<div class="panel-body center">
 				<p><%= @stamp.name if @stamp.name %><br>
-					<%= @stamp.formatted_address if @stamp.formatted_address %><br>
+					<%= @stamp.adr_street_number %>
+					<%= @stamp.adr_route %>
+					<%= @stamp.adr_city %>
+					<%= @stamp.adr_state %>
+					<%= @stamp.adr_postal_code %> <br>
 					<strong><%= @stamp.user.name if @stamp.user %></strong>
 				  <strong>Description:</strong>
 				  <%= @stamp.description %>

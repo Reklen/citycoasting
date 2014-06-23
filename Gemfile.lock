@@ -65,6 +65,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    gon (5.0.4)
+      actionpack (>= 2.3.0)
+      json
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.0.7)
@@ -167,6 +170,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 4.0.0)
   devise (~> 3.2.4)
+  gon
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks

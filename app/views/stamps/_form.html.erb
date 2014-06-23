@@ -15,52 +15,52 @@
     <input id="geocomplete" class="form-control" type="text" placeholder="Start typing your spot..." autofocus  />
   </div>
   <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control",id:"name", type:"text" %>     
+ 
+    <%= f.text_field :name, class: "form-control",id:"name", type:"hidden" %>     
   </div>
   <div class="form-group">
-    <%= f.label :adr_street_number %>
-    <%= f.text_field :adr_street_number, class: "form-control",id:"street_number", type:"text" %>     
+
+    <%= f.text_field :adr_street_number, class: "form-control",id:"street_number", type:"hidden" %>     
   </div>
     <div class="form-group">
-    <%= f.label :adr_route %>
-    <%= f.text_field :adr_route, class: "form-control",id:"route", type:"text" %>     
+
+    <%= f.text_field :adr_route, class: "form-control",id:"route", type:"hidden" %>     
   </div>
   <div class="form-group">
-    <%= f.label :adr_city %>
-    <%= f.text_field :adr_city, class: "form-control",id:"locality", type:"text" %>     
+
+    <%= f.text_field :adr_city, class: "form-control",id:"locality", type:"hidden" %>     
   </div>
   <div class="form-group">
-    <%= f.label :adr_postal_code %>
-    <%= f.text_field :adr_postal_code, class: "form-control",id:"postal_code", type:"text" %>
+
+    <%= f.text_field :adr_postal_code, class: "form-control",id:"postal_code", type:"hidden" %>
   </div>
   <div class="form-group">
-    <%= f.label :adr_state %>
-    <%= f.text_field :adr_state, class: "form-control",id:"administrative_area_level_1", type:"text" %>
+
+    <%= f.text_field :adr_state, class: "form-control",id:"administrative_area_level_1", type:"hidden" %>
   </div>
   <div class="form-group">
-    <%= f.label :adr_country %>
-    <%= f.text_field :adr_country, class: "form-control",id:"country", type:"text" %>
+
+    <%= f.text_field :adr_country, class: "form-control",id:"country", type:"hidden" %>
   </div>
     <div class="form-group">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number, class: "form-control",id:"formatted_phone_number", type:"text" %>
+
+    <%= f.text_field :phone_number, class: "form-control",id:"formatted_phone_number", type:"hidden" %>
   </div>
       <div class="form-group">
-    <%= f.label :google_place_id %>
-    <%= f.text_field :google_place_id, class: "form-control",id:"id", type:"text" %>
+
+    <%= f.text_field :google_place_id, class: "form-control",id:"id", type:"hidden" %>
   </div>
         <div class="form-group">
-    <%= f.label :adr_coord_lat %>
-    <%= f.text_field :adr_coord_lat, class: "form-control",id:"lat", type:"text" %>
+
+    <%= f.text_field :adr_coord_lat, class: "form-control",id:"lat", type:"hidden" %>
   </div>
           <div class="form-group">
-    <%= f.label :adr_coord_lng %>
-    <%= f.text_field :adr_coord_lng, class: "form-control",id:"lng", type:"text" %>
+
+    <%= f.text_field :adr_coord_lng, class: "form-control",id:"lng", type:"hidden" %>
   </div>
             <div class="form-group">
-    <%= f.label :website %>
-    <%= f.text_field :website, class: "form-control",id:"website", type:"text" %>
+
+    <%= f.text_field :website, class: "form-control",id:"website", type:"hidden" %>
   </div>
   <div class="form-group">
     <%= f.label :category %><br>
@@ -84,7 +84,7 @@
 
   <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description,id: "location",placeholder: "Why do you love this spot?" ,class: "form-control" %>
+    <%= f.text_area :description, placeholder: "Why do you love this spot?" ,class: "form-control" %>
   </div>
 
   <div class="form-group">

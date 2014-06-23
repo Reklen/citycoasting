@@ -14,8 +14,8 @@ class StampsController < ApplicationController
 
   def show
    
-    gon.latcoord = @stamp.adr_lat
-    gon.lngcoord = @stamp.adr_lng
+    gon.latcoord = @stamp.adr_coord_lat
+    gon.lngcoord = @stamp.adr_coord_lng
   end
 
 

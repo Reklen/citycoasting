@@ -14,6 +14,3 @@ jQuery ->
         $('.pagination').text("Fetching more stamps")
         $.getScript(url)
     $(window).scroll()
-
-
-alert gon.latcoord

@@ -42,6 +42,10 @@
     <%= f.label :adr_country %>
     <%= f.text_field :adr_country, class: "form-control",id:"country", type:"text" %>
   </div>
+    <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: "form-control",id:"formatted_phone_number", type:"text" %>
+  </div>
   <div class="form-group">
     <%= f.label :category %><br>
     <%= f.select :category, [["Eat", 1], ["Drink", 2], ["Stay", 3], ["Shop", 4], ["Explore", 5]], {class: "multiple dropdown"} %>
@@ -64,7 +68,7 @@
 
   <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description,id: "country", class: "form-control" %>
+    <%= f.text_area :description,id: "formatted_phone_number",placeholder: "What's unique about this spot?" ,class: "form-control" %>
   </div>
 
   <div class="form-group">

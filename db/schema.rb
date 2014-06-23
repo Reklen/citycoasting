@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623002340) do
+ActiveRecord::Schema.define(version: 20140623003110) do
 
   create_table "stamps", force: true do |t|
     t.string   "description"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140623002340) do
     t.string   "adr_postal_code"
     t.string   "adr_state"
     t.string   "adr_country"
+    t.string   "phone_number"
   end
 
   add_index "stamps", ["category"], name: "index_stamps_on_category"

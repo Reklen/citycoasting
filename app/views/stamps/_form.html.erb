@@ -16,15 +16,19 @@
   </div>
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control",id:"name", type:"hidden" %>     
+    <%= f.text_field :name, class: "form-control",id:"name", type:"text" %>     
   </div>
   <div class="form-group">
     <%= f.label :adr_street_number %>
-    <%= f.text_field :adr_street_number, class: "form-control",id:"street_number", type:"hidden" %>     
+    <%= f.text_field :adr_street_number, class: "form-control",id:"street_number", type:"text" %>     
   </div>
     <div class="form-group">
     <%= f.label :adr_route %>
-    <%= f.text_field :adr_route, class: "form-control",id:"route", type:"hidden" %>     
+    <%= f.text_field :adr_route, class: "form-control",id:"route", type:"text" %>     
+  </div>
+  <div class="form-group">
+    <%= f.label :adr_city %>
+    <%= f.text_field :adr_city, class: "form-control",id:"locality", type:"text" %>     
   </div>
   <div class="form-group">
     <%= f.label :category %><br>
@@ -48,7 +52,7 @@
 
   <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description,id: "street_number", class: "form-control" %>
+    <%= f.text_field :description,id: "locality", class: "form-control" %>
   </div>
 
   <div class="form-group">

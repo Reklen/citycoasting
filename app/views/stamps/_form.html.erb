@@ -46,6 +46,10 @@
     <%= f.label :phone_number %>
     <%= f.text_field :phone_number, class: "form-control",id:"formatted_phone_number", type:"text" %>
   </div>
+      <div class="form-group">
+    <%= f.label :bus_id %>
+    <%= f.text_field :bus_id, class: "form-control",id:"id", type:"text" %>
+  </div>
   <div class="form-group">
     <%= f.label :category %><br>
     <%= f.select :category, [["Eat", 1], ["Drink", 2], ["Stay", 3], ["Shop", 4], ["Explore", 5]], {class: "multiple dropdown"} %>

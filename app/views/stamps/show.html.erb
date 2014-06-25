@@ -1,41 +1,38 @@
 <div class = "row">
+	<div class ="col-md-12">
+		<div id="map-canvas"></div>
+	</div>
 	<div class = "col-md-8">
-		<div class="panel panel-default">
-			<div class="panel-heading center">
+		<div class="show_image">
 				<%= image_tag @stamp.image.url(:large) %>
-			</div>
-			<div class="panel-body center">
-				<div class = "pull-left">
-        	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
-        </div>
-        <div class = "pull-right">
-          <%= render 'stamps/category_key', :stamp => @stamp %>
-        </div>
-				<h3><%= @stamp.name if @stamp.name %></h3>
-					<strong><%= @stamp.user.username if @stamp.user %></strong><br>
-
-        <% if (current_user && @stamp.user == current_user) %>
-					
-					<%= link_to edit_stamp_path(@stamp) do %>
-          	<span class="glyphicon glyphicon-edit"></span>
-            Edit
-          <% end %> |
-
-					<%= link_to 'Back', stamps_path %> |
-
-					<%= link_to @stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
-	        	<span class="glyphicon glyphicon-trash"></span>Delete
-	        <% end %><br>
-        <% end %>
-			</div>
 		</div>
+		<div class = "pull-left">
+    	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
+    </div>
+    <div class = "pull-right">
+      <%= render 'stamps/category_key', :stamp => @stamp %>
+    </div>
+			<h3><%= @stamp.name if @stamp.name %></h3>
+				<strong><%= @stamp.user.username if @stamp.user %></strong><br>
+
+	    <% if (current_user && @stamp.user == current_user) %>
+				
+				<%= link_to edit_stamp_path(@stamp) do %>
+	      	<span class="glyphicon glyphicon-edit"></span>
+	        Edit
+	      <% end %> |
+
+				<%= link_to 'Back', stamps_path %> |
+
+				<%= link_to @stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
+	      	<span class="glyphicon glyphicon-trash"></span>Delete
+	      <% end %><br>
+	    <% end %>
 	</div>
 	<div class ="col-md-4">
-		<div class="panel panel-default">
-			<div class="panel-heading center">
-				<div id="map-canvas"></div>
-			</div>
 			<div class="panel-body center">
+				<h3><%= @stamp.name if @stamp.name %></h3>
+					<strong><%= @stamp.user.username if @stamp.user %></strong><br>
 				<%= @stamp.adr_street_number %>
 				<%= @stamp.adr_route %>
 				<%= render 'stamps/neighborhood_key', :stamp => @stamp %>
@@ -44,7 +41,6 @@
 			</div>
 		</div>
 	</div>
-	<div class ="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body center">
 				<%= @stamp.description %>

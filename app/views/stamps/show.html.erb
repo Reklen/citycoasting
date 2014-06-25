@@ -12,7 +12,7 @@
           <%= render 'stamps/category_key', :stamp => @stamp %>
         </div>
 				<h3><%= @stamp.name if @stamp.name %></h3>
-					<strong><%= @stamp.user.name if @stamp.user %></strong><br>
+					<strong><%= @stamp.user.username if @stamp.user %></strong><br>
 
         <% if (current_user && @stamp.user == current_user) %>
 					

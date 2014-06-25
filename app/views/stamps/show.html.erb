@@ -5,24 +5,17 @@
 				<%= image_tag @stamp.image.url(:large) %>
 			</div>
 			<div class="panel-body center">
-				<p><%= @stamp.name if @stamp.name %><br>
-					<%= @stamp.adr_street_number %>
-					<%= @stamp.adr_route %>
-					<%= @stamp.adr_city %>
-					<%= @stamp.adr_state %>
-					<%= @stamp.adr_postal_code %> <br>
-					<strong><%= @stamp.user.name if @stamp.user %></strong><br>
-				  <%= @stamp.description %>
-				</p>
-
-				<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
-
 				<div class = "pull-left">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
         </div>
         <div class = "pull-right">
           <%= render 'stamps/category_key', :stamp => @stamp %>
         </div><br>
+				<p><%= @stamp.name if @stamp.name %><br>
+					<strong><%= @stamp.user.name if @stamp.user %></strong><br>
+				 
+				</p>
+
         <% if (current_user && @stamp.user == current_user) %>
 					
 					<%= link_to edit_stamp_path(@stamp) do %>
@@ -43,6 +36,20 @@
 		<div class="panel panel-default">
 			<div class="panel-heading center">
 				<div id="map-canvas"></div>
+			</div>
+			<div class="panel-body center">
+				<%= @stamp.adr_street_number %>
+				<%= @stamp.adr_route %>
+				<%= render 'stamps/neighborhood_key', :stamp => @stamp %>
+				<%= @stamp.adr_state %>C
+				<%= @stamp.adr_postal_code %> <br>
+			</div>
+		</div>
+	</div>
+	<div class ="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body center">
+				<%= @stamp.description %>
 			</div>
 		</div>
 	</div>

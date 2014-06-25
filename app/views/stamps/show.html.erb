@@ -11,10 +11,8 @@
         <div class = "pull-right">
           <%= render 'stamps/category_key', :stamp => @stamp %>
         </div><br>
-				<p><%= @stamp.name if @stamp.name %><br>
+				<h3><%= @stamp.name if @stamp.name %></h3><br>
 					<strong><%= @stamp.user.name if @stamp.user %></strong><br>
-				 
-				</p>
 
         <% if (current_user && @stamp.user == current_user) %>
 					

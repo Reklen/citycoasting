@@ -7,14 +7,14 @@
 			<div class="panel-heading center">
 				<%= image_tag @stamp.image.url(:large) %>
 			</div>
-			<div class="panel-body left">
+			<div class="panel-body">
 				<div class = "pull-left">
-					<h3><%= @stamp.name if @stamp.name %></h3>
-					<p>by <strong><%= @stamp.user.username if @stamp.user %></strong></p><br>
+					<p><strong><%= @stamp.name if @stamp.name %></strong></p>
+					<p>by <%= @stamp.user.username if @stamp.user %></p>
         </div>
         <div class = "pull-right">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
-          <%= render 'stamps/category_key', :stamp => @stamp %><br>
+          <%= render 'stamps/category_key', :stamp => @stamp %>
         </div>
        </div>
 

@@ -38,22 +38,17 @@
 	</div>
 	<div class ="col-md-4">
 		<div class="panel panel-default">
-			<div class="panel-heading center">
-				<div id="map-canvas"></div>
-			</div>
-			<div class="panel-body center">
-				<%= @stamp.adr_street_number %>
-				<%= @stamp.adr_route %>
-				<%= render 'stamps/neighborhood_key', :stamp => @stamp %>
-				<%= @stamp.adr_state %>C
-				<%= @stamp.adr_postal_code %> <br>
-			</div>
-		</div>
-	</div>
-	<div class ="col-md-4">
-		<div class="panel panel-default">
-			<div class="panel-body center">
-				<%= @stamp.description %>
+			<div class="panel-body left">
+				<h3>Neighborhood</h3>
+					<%= render 'stamps/neighborhood_key', :stamp => @stamp %>
+				<h3>Address</h3>
+					<%= @stamp.adr_street_number %>
+					<%= @stamp.adr_route %>
+					<%= @stamp.adr_state %>C
+					<%= @stamp.adr_postal_code %> <br>
+
+				<h3>The Details</h3>
+					<%= @stamp.description %>
 			</div>
 		</div>
 	</div>

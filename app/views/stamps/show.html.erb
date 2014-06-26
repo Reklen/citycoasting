@@ -2,11 +2,11 @@
 	<div class ="col-md-12">
 		<div id="map-canvas"></div>
 	</div>
-	<div class = "col-md-8">
+	<div class = "col-md-7">
 		<div class="panel panel-default">
-			<div class="panel-heading center">
+		
 				<%= image_tag @stamp.image.url(:large) %>
-			</div>
+	
 			<div class="panel-body">
 				<div class = "pull-left">
 					<p><strong><%= @stamp.name if @stamp.name %></strong></p>
@@ -18,7 +18,7 @@
         </div>
        </div>
 
-        <div class = "panel-body center">
+        <div class = "panel-body" center>
 	        <% if (current_user && @stamp.user == current_user) %>
 						
 						<%= link_to edit_stamp_path(@stamp) do %>
@@ -36,18 +36,17 @@
 			</div>
 	
 	</div>
-	<div class ="col-md-4">
+	<div class ="col-md-5">
 		<div class="panel panel-default">
 			<div class="panel-body left">
-				<h3>Neighborhood</h3>
-					<%= render 'stamps/neighborhood_key', :stamp => @stamp %>
-				<h3>Address</h3>
+				<strong>Neighborhood</strong><br>
+					<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
+				<strong>Address</strong><br>
 					<%= @stamp.adr_street_number %>
 					<%= @stamp.adr_route %>
 					<%= @stamp.adr_state %>C
-					<%= @stamp.adr_postal_code %> <br>
-
-				<h3>The Details</h3>
+					<%= @stamp.adr_postal_code %> <br><br>
+				<strong>The Details</strong><br>
 					<%= @stamp.description %>
 			</div>
 		</div>

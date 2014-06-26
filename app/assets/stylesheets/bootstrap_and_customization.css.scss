@@ -9,6 +9,8 @@ $navbar-default-brand-color:      #ecf0f1;
 $navbar-default-link-color:   white;
 $brand-primary:                                    #75B08A;
 $jumbotron-bg:                                         white;
+@media (min-width: 768px) { .container { max-width: 750px; } }
+
 
 @import 'bootstrap';
 
@@ -28,4 +30,8 @@ body {
 
 .navbar .btn-primary a:hover{
 	background-color:green;
+}
+
+.container{
+	
 }

@@ -7,31 +7,34 @@
 			<div class="panel-heading center">
 				<%= image_tag @stamp.image.url(:large) %>
 			</div>
-			<div class="panel-body center">
+			<div class="panel-body left">
 				<div class = "pull-left">
-        	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
+					<h3><%= @stamp.name if @stamp.name %></h3>
+					<p>by <strong><%= @stamp.user.username if @stamp.user %></strong></p><br>
         </div>
         <div class = "pull-right">
-          <%= render 'stamps/category_key', :stamp => @stamp %>
+        	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
+          <%= render 'stamps/category_key', :stamp => @stamp %><br>
         </div>
-				<h3><%= @stamp.name if @stamp.name %></h3>
-					<strong><%= @stamp.user.username if @stamp.user %></strong><br>
+       </div>
 
-        <% if (current_user && @stamp.user == current_user) %>
-					
-					<%= link_to edit_stamp_path(@stamp) do %>
-          	<span class="glyphicon glyphicon-edit"></span>
-            Edit
-          <% end %> |
+        <div class = "panel-body center">
+	        <% if (current_user && @stamp.user == current_user) %>
+						
+						<%= link_to edit_stamp_path(@stamp) do %>
+	          	<span class="glyphicon glyphicon-edit"></span>
+	            Edit
+	          <% end %> |
 
-					<%= link_to 'Back', stamps_path %> |
+						<%= link_to 'Back', stamps_path %> |
 
-					<%= link_to @stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
-	        	<span class="glyphicon glyphicon-trash"></span>Delete
-	        <% end %><br>
-        <% end %>
+						<%= link_to @stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
+		        	<span class="glyphicon glyphicon-trash"></span>Delete
+		        <% end %><br>
+	        <% end %>
+	      </div>
 			</div>
-		</div>
+	
 	</div>
 	<div class ="col-md-4">
 		<div class="panel panel-default">

@@ -8,7 +8,8 @@
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>
         </div>
         <div class = "pull-right">
-          <%= render 'stamps/category_key', :stamp => stamp %>
+          <p><%= render 'stamps/category_key', :stamp => stamp %></p>
+          @<%= stamp.user.username if stamp.user %>
         </div>
       </div>
     </div>

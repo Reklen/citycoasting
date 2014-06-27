@@ -2,7 +2,7 @@
 	<div class ="col-md-12">
 		<div id="map-canvas"></div>
 	</div>
-	<div class = "col-md-7">
+	<div class = "col-md-7 center">
 		<div class="panel panel-default">
 		
 				<%= image_tag @stamp.image.url(:large) %>
@@ -18,7 +18,7 @@
         </div>
        </div>
 
-        <div class = "panel-body" center>
+        <div class = "center">
 	        <% if (current_user && @stamp.user == current_user)||(current_user.role=='admin') %>
 						
 						<%= link_to edit_stamp_path(@stamp) do %>

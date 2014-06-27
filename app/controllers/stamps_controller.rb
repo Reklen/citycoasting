@@ -73,10 +73,13 @@ class StampsController < ApplicationController
     end
 
     def correct_user
-      @stamp = current_user.stamps.find_by(id: params[:id])
-
-      redirect_to stamps_path, notice: "Not authorized to edit this stamp." if @stamp.nil?
+      
+      if current_user.role !='admin'
+        @stamp = current_user.stamps.find_by(id: params[:id])
+        redirect_to stamps_path, notice: "Not authorized to edit this stamp." if @stamp.nil?
+      end
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stamp_params

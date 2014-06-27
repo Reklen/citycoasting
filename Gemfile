@@ -20,7 +20,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
-
+gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
 
 group :development, :test do
 	gem 'sqlite3'

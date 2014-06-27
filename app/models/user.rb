@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  make_flagger
+
   def role?
     role
 	end
@@ -10,4 +13,5 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true
+
 end

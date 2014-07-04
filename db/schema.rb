@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627044549) do
+ActiveRecord::Schema.define(version: 20140704194252) do
 
   create_table "flaggings", force: true do |t|
     t.string   "flaggable_type"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140627044549) do
   add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], name: "access_flaggings"
 
   create_table "stamps", force: true do |t|
-    t.string   "description"
+    t.text     "description",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

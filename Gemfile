@@ -21,6 +21,7 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'has_scope'
 
 group :development, :test do
 	gem 'sqlite3'

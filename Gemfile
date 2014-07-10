@@ -22,7 +22,7 @@ gem "cancan"
 gem "gon"
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'has_scope'
-
+gem 'filterrific'
 group :development, :test do
 	gem 'sqlite3'
 end

@@ -14,7 +14,7 @@
         </div>
         <div class = "pull-right">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
-          <%= render 'stamps/category_key', :stamp => @stamp %>
+          <%= render 'stamps/neighborhood_key', :stamp => @stamp %>
         </div>
        </div>
 
@@ -42,7 +42,8 @@
 		<div class="panel panel-default">
 			<div class="panel-body body">
 				<strong>Neighborhood</strong><br>
-					<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
+					\
+					<%= render 'stamps/category_key', :stamp => @stamp %><br>
 				<strong>Address</strong><br>
 					<%= @stamp.adr_street_number %>
 					<%= @stamp.adr_route %>

@@ -9,7 +9,7 @@
         </div>
         <div class = "pull-right">
           <p><%= render 'stamps/category_key', :stamp => stamp %></p>
-          @<%= stamp.user.username if stamp.user %>
+          by <%= stamp.user.username if stamp.user %>
         </div>
       </div>
     </div>

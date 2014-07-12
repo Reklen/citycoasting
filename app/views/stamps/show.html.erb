@@ -10,7 +10,7 @@
 			<div class="panel-body">
 				<div class = "pull-left">
 					<p><strong><%= @stamp.name if @stamp.name %></strong></p>
-					<p>by <%= link_to stamp.user.username, stamp.user.username if stamp.user %></p>
+					<p>by <%= link_to @stamp.user.username, @stamp.user.username if @stamp.user %></p>
         </div>
         <div class = "pull-right">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>

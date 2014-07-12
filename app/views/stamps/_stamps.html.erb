@@ -9,7 +9,7 @@
         </div>
         <div class = "pull-right">
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>
-          by <%= link_to stamp.user.username, stamp.user.username if stamp.user %>
+          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
         </div>
       </div>
     </div>

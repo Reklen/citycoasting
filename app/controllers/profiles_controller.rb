@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 
   	
 		if @user
-			@stamps = @user.stamps.all
+			@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
 			render action: :show
 		else
   		render file: 'public/404', status: 404, formats: [:html]

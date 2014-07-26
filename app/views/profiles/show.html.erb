@@ -11,7 +11,23 @@
 
 <% if @stamps %>
 	<div id="stamps" class="transitions-enabled">	
-  	<%= render 'stamps/stamps' %>
+  	<% @stamps.each do |stamp| %>
+  <div class="box panel panel-default">
+    <div class = "center">
+      <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
+      <div class = "panel-body">
+        <div class = "pull-left text-left">
+          <p><strong><%= stamp.name if stamp.name %></strong></p>
+          <p><%= render 'stamps/category_key', :stamp => stamp %></p>
+        </div>
+        <div class = "pull-right">
+          <%= render 'stamps/neighborhood_key', :stamp => stamp %>
+          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 	</div>
 
 <% end %>

@@ -18,7 +18,7 @@
       <div class = "panel-body">
         <div class = "pull-left text-left">
           <p><strong><%= stamp.name if stamp.name %></strong></p>
-          <p><%= render 'stamps/category_key', :stamp => stamp %></p>
+          <p><%= stamp.category.name if stamp.category %></p>
         </div>
         <div class = "pull-right">
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>

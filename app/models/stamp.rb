@@ -1,5 +1,6 @@
 class Stamp < ActiveRecord::Base
 	belongs_to :user
+	belongs_to :category
 
 
 	has_attached_file :image, :styles => { :large => "600x400#", :rendered => "500x300#",:medium => "300x300#", :thumb => "100x100#" }

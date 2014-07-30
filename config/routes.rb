@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   root "stamps#index"
   get "about" => "pages#about" # creates about_path
 
+  resources :categories
   get '(:category_id)' => 'stamps#index'
 
+  resources :profiles
   get '/:id', to: 'profiles#show', as: 'profile'
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root "stamps#index"
   get "about" => "pages#about" # creates about_path
 
-  get '(:category_id)' => 'stamps#index'
+  get '(:category_id)', to: 'stamps#index', as: 'category/category_id'
 
 
   get 'profiles/:id', to: 'profiles#show', as: 'profile'

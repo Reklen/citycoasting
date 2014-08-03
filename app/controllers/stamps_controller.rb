@@ -18,6 +18,11 @@ class StampsController < ApplicationController
 
 
   def show
+
+    if user_signed_in? 
+    else
+      redirect_to new_user_registration_path, notice: "Please sign up to view a stamp."
+    end
    
     gon.latcoord = @stamp.adr_coord_lat
     gon.lngcoord = @stamp.adr_coord_lng
@@ -69,6 +74,13 @@ class StampsController < ApplicationController
       format.html { redirect_to stamps_url, notice: 'Stamp was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @stamp = Stamp.find(params[:id])
+    @stamp.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
   end
 
   private

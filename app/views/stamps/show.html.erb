@@ -15,6 +15,7 @@
         <div class = "pull-right">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
           <%= render 'stamps/category_key', :stamp => @stamp %>
+          <%= pluralize @stamp.reputation_for(:votes).to_i, "vote" %>
         </div>
        </div>
 

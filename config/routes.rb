@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   
   get 'profiles/show'
 
-  resources :stamps
+  resources :stamps do
+    member { post :vote }
+  end
 
   devise_for :users
   root "stamps#index"

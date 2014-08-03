@@ -9,7 +9,10 @@
         </div>
         <div class = "pull-right">
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>
-          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
+          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>|
+          <%= pluralize stamp.reputation_for(:votes).to_i, "vote" %>
+          <%= link_to "up", vote_stamp_path(stamp, type: "up"), method: "post" %>
+          <%= link_to "down", vote_stamp_path(stamp, type: "down"), method: "post" %>
         </div>
       </div>
     </div>

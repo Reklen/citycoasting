@@ -4,6 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :evaluations, class_name: "RSEvaluation", as: :source
+  has_reputation :votes, source: {reputation: :votes, of: :stamps}, aggregated_by: :sum
+  
+
+  def voted_for?(stamp)
+    evaluations.where(target_type: stamp.class, target_id: stamp.id).present?
+  end
 
   def role?
     role

@@ -1,7 +1,11 @@
 <% @stamps.each do |stamp| %>
   <div class="box panel panel-default">
     <div class = "center">
-      <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
+      <% if stamp.id % 2 == 0 %>
+        <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
+      <% else %>
+        <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
+      <% end %>
       <div class = "panel-body">
         <div class = "pull-left text-left">
           <p><strong><%= stamp.name if stamp.name %></strong></p>

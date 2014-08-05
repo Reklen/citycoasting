@@ -1,7 +1,7 @@
 <% @stamps.each do |stamp| %>
   <div class="box panel panel-default">
     <div class = "center">
-      <%= link_to image_tag(stamp.image.url(:large)), stamp %>
+      <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
       <div class = "panel-body">
         <div class = "pull-left text-left">
           <p><strong><%= stamp.name if stamp.name %></strong></p>
@@ -10,9 +10,9 @@
         <div class = "pull-right">
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>
           by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>|
-          <%= pluralize stamp.reputation_for(:votes).to_i, "vote" %>
-          <%= link_to "up", vote_stamp_path(stamp, type: "up"), method: "post" %>
-          <%= link_to "down", vote_stamp_path(stamp, type: "down"), method: "post" %>
+          <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %><br>
+            <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %>
+            <%= link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
         </div>
       </div>
     </div>

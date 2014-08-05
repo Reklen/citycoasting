@@ -20,7 +20,9 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
+
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4', require: 'reputation_system'
+
 group :development, :test do
 	gem 'sqlite3'
 	gem "better_errors"

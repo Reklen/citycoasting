@@ -2,7 +2,10 @@ class Stamp < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :category
 
+	
+
 	has_reputation :votes, source: :user, aggregated_by: :sum
+
 
 
 	has_attached_file :image, :styles => { :large => "600x400#", :rendered => "500x350#", :rendered2 => "500x400#", :medium => "300x300#" }

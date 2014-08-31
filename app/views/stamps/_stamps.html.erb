@@ -3,7 +3,7 @@
     <div class = "center">
       
 
-      <% if stamp.id > rand(Stamp.count)  %>
+      <% if rand(Stamp.count) > rand(Stamp.count)  %>
         <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
       <% else %>
         <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
@@ -18,12 +18,6 @@
         <div class = "pull-right">
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>
           <p><%= stamp.category.name if stamp.category %></p>
-            
-            <% if current_user && current_user.voted_for?(stamp) %>
-              <%= link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
-            <% else %>
-              <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %>
-            <% end %>
         </div>
       </div>
     </div>

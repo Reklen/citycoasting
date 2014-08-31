@@ -15,6 +15,16 @@ class User < ActiveRecord::Base
   def role?
     role
 	end
+
+  def up_voted_for?(item)
+    eval = evaluations.where(target_type: item.class, target_id: item.id)
+    eval.present? && eval.value < 0 ? true : false
+  end
+
+  def down_voted_for?(stamp)
+    eval = evaluations.where(target_type: stamp.class, target_id: stamp.id).first
+    eval.present? && eval.value <= 0 ? true: false
+  end
   has_many :stamps
 
   validates :name, presence: true

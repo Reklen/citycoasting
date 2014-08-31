@@ -9,12 +9,14 @@
       <div class = "panel-body">
         <div class = "pull-left text-left">
           <p><strong><%= stamp.name if stamp.name %></strong></p>
-          <p><%= stamp.category.name if stamp.category %></p>
+          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>|
+          <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %><br>
+          
         </div>
         <div class = "pull-right">
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>
-          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>|
-          <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %><br>
+          <p><%= stamp.category.name if stamp.category %></p>
+            
             <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %>
             <%= link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
         </div>

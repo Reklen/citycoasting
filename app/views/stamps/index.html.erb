@@ -1,3 +1,10 @@
+
+<div class = "row filter">
+	<div class ="col-md-4">
+		<ul class ="form-group"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Filter By Category", id: "category_select", class: "form-control" %>
+		</ul>
+	</div>
+</div>
 <div id="stamps" class="transitions-enabled">	
   <%= render 'stamps/stamps' %>
 </div>

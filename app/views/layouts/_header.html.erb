@@ -29,9 +29,11 @@
               <% end %>
           </li>
           <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></li>
-          <li>
-            <ul class ="form-group"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Filter By Category", id: "category_select", class: "form-control" %></ul>
-          </li>
+          
+
+       
+
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>

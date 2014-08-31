@@ -49,8 +49,8 @@
 					<%= @stamp.adr_route %>
 					<%= @stamp.adr_state %>C
 					<%= @stamp.adr_postal_code %> <br><br>
-				<strong>The Website</strong><br>
-				<p><%= @stamp.website if @stamp.website %></p>
+				<strong>Website</strong><br>
+				<p> <%= link_to @stamp.website if @stamp.website %></p>
 				<strong>The Details</strong><br>
 					<p><%= @stamp.description %></p>
 

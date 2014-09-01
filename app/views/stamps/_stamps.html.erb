@@ -10,7 +10,9 @@
       <% end %>
       <div class = "panel-body">
         <div class = "pull-left text-left">
-          <p><strong><%= stamp.name if stamp.name %></strong></p>
+          <p><strong><%= stamp.name if stamp.name %></strong>
+          <%= render 'stamps/neighborhood_key', :stamp => stamp %>
+            <%= stamp.city.name if stamp.city %></p>
           by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
           <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> |
           
@@ -20,8 +22,7 @@
           
         </div>
         <div class = "pull-right">
-          <p><%= render 'stamps/neighborhood_key', :stamp => stamp %>
-            <%= stamp.city.name if stamp.city %></p>
+
           <p><%= stamp.category.name if stamp.category %></p>
                 
         </div>

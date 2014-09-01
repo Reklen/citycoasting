@@ -18,15 +18,8 @@
         <div class = "pull-right">
           <%= render 'stamps/neighborhood_key', :stamp => stamp %>
           <p><%= stamp.category.name if stamp.category %></p>
-
-
-              <% if current_user.voted_for?(stamp) %>
-              
                 <%= link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
-              <% else %>
                 <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %>
-             
-            <% end %>
         </div>
       </div>
     </div>

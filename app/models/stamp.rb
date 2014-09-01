@@ -2,7 +2,6 @@ class Stamp < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :category
 
-	
 
 	has_reputation :votes, source: :user, aggregated_by: :sum
 

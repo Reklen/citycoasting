@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 	end
 
   def up_voted_for?(item)
-    eval = evaluations.where(target_type: item.class, target_id: item.id)
+    eval = evaluations.where(target_type: item.class, target_id: stamp.id).first
     eval.present? && eval.value < 0 ? true : false
   end
 

@@ -7,16 +7,17 @@ class User < ActiveRecord::Base
   has_many :evaluations, class_name: "RSEvaluation", as: :source
   has_reputation :votes, source: {reputation: :votes, of: :stamps}, aggregated_by: :sum
   
-  def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
-    end
-  end
+  #FB LOGIN
+  # def self.from_omniauth(auth)
+  #   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+  #     user.provider = auth.provider
+  #     user.uid = auth.uid
+  #     user.name = auth.info.name
+  #     user.oauth_token = auth.credentials.token
+  #     user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+  #     user.save!
+  #   end
+  # end
   
   def voted_for?(stamp)
     evaluations.where(target_type: stamp.class, target_id: stamp.id).present?

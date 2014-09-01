@@ -30,6 +30,8 @@
           </li>
           <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></li>
         </ul>
+        
+<!-- FB LOGIN
         <div id="user-widget">
           <% if current_user %>
             Welcome <strong><%= current_user.name %></strong>!
@@ -37,7 +39,11 @@
           <% else %>
             <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
           <% end %>
-        </div>
+        </div> -->
+
+
+
+
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li><%= link_to current_user.username , profile_path(current_user.username) %>

@@ -2,11 +2,8 @@ class ProfilesController < ApplicationController
  
   def show
   	
-    if User.find_by_username(params[:id]) == nil
-      @user = User.find_by_username(params[:uid])
-    else
-		  @user = User.find_by_username(params[:id])
-    end
+		@user = User.find_by_username(params[:id])
+
   	
 		if @user
 			@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => @user.stamps.count)

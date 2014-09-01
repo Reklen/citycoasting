@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   get 'profiles/:id', to: 'profiles#show', as: 'profile'
 
-
+ get 'auth/:provider/callback' => 'sessions#create'
+ get 'auth/failure' => redirect('/')
+ get 'signout' => 'sessions#destroy', as: 'signout'
   
   
   # The priority is based upon order of creation: first created -> highest priority.

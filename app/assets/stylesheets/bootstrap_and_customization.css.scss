@@ -17,6 +17,10 @@ $jumbotron-bg:                                         white;
      text-align: center;
 }
 
+.navbar{
+	opacity: .92;	
+}
+
 .navbar-brand {
      font-weight: bold;
 }
@@ -28,10 +32,34 @@ body {
 }
 
 .navbar .btn-primary a:hover{
-	background-color:green;
+	
 }
 
 .filter{
-	margin: 0 auto;
+	
+	width: 100%;
 
+}
+.specialjum{
+	background: url('http://www.newyorkpixels.com/photos/new-york-city/soho-lg/soho-2.jpg') center;
+	color:white;
+}
+
+.hero-unit {
+  background-size:cover;
+  height:300px;
+  color:white;
+  width: 100%;
+  opacity: 3;
+}
+
+.navbar .dropdown-toggle a{
+	color:white;
+}
+#signup_btn{
+	color:white;
+}
+#category_select{
+	background-color:#50A6AF;
+	color:white;
 }

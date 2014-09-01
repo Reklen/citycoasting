@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     member { post :vote }
   end
 
-  devise_for :users
+  devise_for :users, :controllers => { : omniauth_callbacks => "omniauth_callbacks" }
   root "stamps#index"
   get "about" => "pages#about" # creates about_path
 

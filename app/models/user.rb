@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :id => auth.uid).first
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
     if user
       return user
     else

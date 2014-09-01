@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :omniauthable, :omniauth_providers => [:facebook], :database_authenticatable, :registerable,
+  devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :evaluations, class_name: "RSEvaluation", as: :source
@@ -38,6 +38,6 @@ class User < ActiveRecord::Base
   end
   has_many :stamps
   validates :name, presence: true
-  validates :username, presence: true, uniqueness: true
+  #validates :username, presence: true, uniqueness: true
 
 end

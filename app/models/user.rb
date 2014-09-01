@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     eval.present? && eval.value <= 0 ? true: false
   end
   has_many :stamps
-  attr_accessible :password, :password_confirmation, :remember_me, :username, :email,  :provider, :uid
+  attr_accessible  :provider, :uid
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true
 

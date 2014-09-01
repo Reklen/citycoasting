@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901224233) do
+ActiveRecord::Schema.define(version: 20140901225644) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -112,9 +112,11 @@ ActiveRecord::Schema.define(version: 20140901224233) do
     t.float    "adr_coord_lng"
     t.text     "google_place_id"
     t.string   "formatted_address"
+    t.integer  "city_id"
   end
 
   add_index "stamps", ["category_id"], name: "index_stamps_on_category_id"
+  add_index "stamps", ["city_id"], name: "index_stamps_on_city_id"
   add_index "stamps", ["user_id"], name: "index_stamps_on_user_id"
 
   create_table "users", force: true do |t|

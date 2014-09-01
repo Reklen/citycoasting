@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.where(:provider => auth.provider, :id => auth.uid).first
     if user
       return user
     else
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
       else
         user = User.create(name:auth.extra.raw_info.name,
                             provider:auth.provider,
-                            uid:auth.uid,
+                            id:auth.uid,
                             email:auth.info.email,
                             password:Devise.friendly_token[0,20],
                           )
@@ -45,6 +45,6 @@ class User < ActiveRecord::Base
   end
   has_many :stamps
   validates :name, presence: true
-  #validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 
 end

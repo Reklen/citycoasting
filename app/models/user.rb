@@ -37,7 +37,6 @@ class User < ActiveRecord::Base
     eval.present? && eval.value <= 0 ? true: false
   end
   has_many :stamps
-  attr_accessible  :provider, :uid
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true
 

@@ -43,7 +43,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body body">
 				<strong>Neighborhood</strong><br>
-					<%= render 'stamps/neighborhood_key', :stamp => @stamp %><br>
+					<%= @stamp.neighborhood.name if @stamp.neighborhood %><br>
 				<strong>Address</strong><br>
 					<%= @stamp.adr_street_number %>
 					<%= @stamp.adr_route %>

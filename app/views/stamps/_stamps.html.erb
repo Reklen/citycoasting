@@ -9,7 +9,7 @@
       <div class = "panel-body">
         <div class = "pull-left text-left">
           <strong><%= stamp.name if stamp.name %></strong><br>
-          <%= render 'stamps/neighborhood_key', :stamp => stamp %>, <%= stamp.city.name if stamp.city %>
+          <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= stamp.city.name if stamp.city %>
           by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
           <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> |      
           <% link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>

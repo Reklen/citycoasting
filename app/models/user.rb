@@ -45,6 +45,6 @@ class User < ActiveRecord::Base
   end
   has_many :stamps
   validates :name, presence: true
-  validates :username, presence: true, uniqueness: true
+  #deleted for fb login ---validates :username, presence: true, uniqueness: true
 
 end

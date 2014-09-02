@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901225644) do
+ActiveRecord::Schema.define(version: 20140902033601) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20140901225644) do
   add_index "flaggings", ["flag", "flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], name: "access_flag_flaggings"
   add_index "flaggings", ["flaggable_type", "flaggable_id"], name: "index_flaggings_on_flaggable_type_and_flaggable_id"
   add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], name: "access_flaggings"
+
+  create_table "neighborhoods", force: true do |t|
+    t.integer  "city_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rs_evaluations", force: true do |t|
     t.string   "reputation_name"
@@ -95,7 +102,7 @@ ActiveRecord::Schema.define(version: 20140901225644) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
     t.integer  "price_range"
-    t.integer  "neighborhood"
+    t.integer  "neighborhood_id"
     t.string   "name"
     t.string   "adr_street_number"
     t.string   "adr_route"

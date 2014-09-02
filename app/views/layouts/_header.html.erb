@@ -65,7 +65,7 @@ Signed in as <%= current_user.name %>. Not you?
             <li><%= link_to "Log In", new_user_session_path %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle btn-default btn-primary" id="signup_btn" data-toggle="dropdown" > Sign Up<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" id= "user-widget">
                       <li><%= link_to "Log In", new_user_session_path %></li>
         
                         <li><%= link_to "Sign Up", new_user_registration_path %></li>

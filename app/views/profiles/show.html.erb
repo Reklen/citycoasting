@@ -22,7 +22,7 @@
               <p><%= stamp.category.name if stamp.category %></p>
             </div>
             <div class = "pull-right">
-              <%= render 'stamps/neighborhood_key', :stamp => stamp %>
+              <%= stamp.neighborhood.name if stamp.neighborhood %>
               by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
             </div>
           </div>

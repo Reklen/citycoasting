@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'cities/index'
+
+  get 'cities/show'
+
   get 'profiles/show'
 
   resources :stamps do

@@ -2,6 +2,7 @@ class Stamp < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :category
 	belongs_to :city
+	belongs_to :neighborhood
 
 
 	has_reputation :votes, source: :user, aggregated_by: :sum

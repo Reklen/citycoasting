@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     member { post :vote }
   end
 
+#FB Login
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
   root "stamps#index"
   get "about" => "pages#about" # creates about_path
 
@@ -15,9 +17,7 @@ Rails.application.routes.draw do
 
   get 'profiles/:id', to: 'profiles#show', as: 'profile'
 
- get 'auth/:provider/callback' => 'sessions#create'
- get 'auth/failure' => redirect('/')
- get 'signout' => 'sessions#destroy', as: 'signout'
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.

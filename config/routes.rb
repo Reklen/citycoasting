@@ -15,9 +15,10 @@ Rails.application.routes.draw do
 
   get 'profiles/:id', to: 'profiles#show', as: 'profile'
 
-match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-match 'auth/failure', to: redirect('/'), via: [:get, :post]
-match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+ get 'auth/:provider/callback' => 'sessions#create'
+ get 'auth/failure' => redirect('/')
+ get 'signout' => 'sessions#destroy', as: 'signout'
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

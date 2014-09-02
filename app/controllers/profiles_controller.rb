@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
 
   	
 		if @user
-			@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => @user.stamps.count)
+			@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
      
 			render action: :show
 		else

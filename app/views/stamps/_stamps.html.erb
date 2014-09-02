@@ -1,5 +1,5 @@
 <% @stamps.each do |stamp| %>
-  <div class="box panel panel-default">
+  <div class="box panel panel-default" id = "stamp_box">
     <div class = "center">
       <% if rand(Stamp.count) > rand(Stamp.count)  %>
         <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>

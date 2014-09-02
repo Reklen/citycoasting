@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'cities/index'
+  get 'cities/index' => "cities#index"
 
   get 'cities/show'
 

@@ -28,10 +28,20 @@
 	border-color:white;
 }
 
+
 .panel img{
 	width: 100%;
-	height: 80%
+	height: 80%;
 }
+
+.city-div{
+	margin: 10px;
+}
+.city-div img{
+	height:100%;
+	width:100%;
+}
+
 #map-canvas{
 	height:150px;
 	margin-bottom:30px;

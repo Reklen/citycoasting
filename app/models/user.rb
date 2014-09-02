@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
                             uid:auth.uid,
                             email:auth.info.email,
                             password:Devise.friendly_token[0,20],
+                            username:auth.info.email
                           )
       end    end
   end
@@ -45,6 +46,6 @@ class User < ActiveRecord::Base
   end
   has_many :stamps
   validates :name, presence: true
-  #deleted for fb login ---validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 
 end

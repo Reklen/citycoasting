@@ -14,7 +14,7 @@
         </div>
         <div class = "pull-right">
         	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
-          <p><%= stamp.category.name if stamp.category %></p><br>
+          <p><%= @stamp.category.name if @stamp.category %></p><br>
           <%= pluralize @stamp.reputation_for(:votes).to_i, "vote" %>
         </div>
        </div>

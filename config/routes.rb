@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'cities/show'
 
+   get 'cities/:id', to: 'cities#show', as: 'cities'
+
   get 'profiles/show'
 
   resources :stamps do

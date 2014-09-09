@@ -9,10 +9,20 @@
 .city-div{
 	height:300px;
 
-	
 
 }
 
+ .city_hdr{position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    text-align:center;
+      filter: alpha(opacity=300); /* internet explorer */
+    -khtml-opacity: 0.5;      /* khtml, old safari */
+    -moz-opacity: 0.5;       /* mozilla, netscape */
+    opacity: 0.5;  
+    color:black;
+}
 .city-div img{
 	height:100%;
 }

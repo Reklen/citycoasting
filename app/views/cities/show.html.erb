@@ -2,7 +2,7 @@
 	<div class ="col-md-12">
 <h1><%= @city.name %></h1>
 <div>
-	<ul class ="form-group"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Everything", id: "category_select", class: "form-control btn dropdown-toggle" %>
+	<ul class ="form-group"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Everything", id: "category_city_select", class: "form-control btn dropdown-toggle" %>
 	</ul>
 </div>
 	</div>
@@ -10,20 +10,28 @@
 <% if @stamps %>
 	<div id="stamps" class="transitions-enabled">	
   	<% @stamps.each do |stamp| %>
-      <div class="box panel panel-default">
+      <div class="box panel panel-default" id = "stamp_box">
         <div class = "center">
-          <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
-          <div class = "panel-body">
-            <div class = "pull-left text-left">
-              <p><strong><%= stamp.name if stamp.name %></strong></p>
-              <p><%= stamp.category.name if stamp.category %></p>
-            </div>
-            <div class = "pull-right">
-              <%= stamp.neighborhood.name if stamp.neighborhood %>
-              by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
-            </div>
-          </div>
-        </div>
+		      <% x = 0 %>
+		      <% if stamp.id % 2 == 0  %>
+		        <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
+		      <% else %>
+		        <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
+		      <% end %>
+		      <div class = "panel-body">
+		        <div class = "pull-left text-left">
+		          <strong><%= stamp.name if stamp.name %></strong><br>
+		          <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= stamp.city.name if stamp.city %>
+		          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
+		          <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> |      
+		          <% link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
+		          <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %> 
+		        </div>
+		        <div class = "pull-right">
+		          <p><%= stamp.category.name if stamp.category %></p>
+		        </div>
+      		</div>
+    		</div>
       </div>
     <% end %>
 	</div>

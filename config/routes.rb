@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
-  get 'cities/index' => "cities#index"
+  #get 'cities/index' => "cities#index"
 
-  get 'cities/show'
+  #get 'cities/show'
 
-   get 'cities/:id', to: 'cities#show', as: 'cities'
+  #get 'cities/:id', to: 'cities#show', as: 'cities'
+  resources :cities
 
   get 'profiles/show'
 

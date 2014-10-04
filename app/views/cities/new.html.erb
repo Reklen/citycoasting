@@ -1,0 +1,12 @@
+<h1>New City</h1>
+
+<%= render 'form' %>
+
+<h2> Current Cities </h2>
+<% @cities.each do |city| %>
+	<%= city.name %><br>
+<% end %>
+<br>
+<br>
+
+<%= link_to 'Back', root_path %>

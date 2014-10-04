@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   #get 'cities/:id', to: 'cities#show', as: 'cities'
   resources :cities
+  resources :neighborhoods
 
   get 'profiles/show'
 

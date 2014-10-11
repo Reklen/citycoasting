@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902033601) do
+ActiveRecord::Schema.define(version: 20141011041931) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20140902033601) do
     t.text     "google_place_id"
     t.string   "formatted_address"
     t.integer  "city_id"
+    t.integer  "rank"
   end
 
   add_index "stamps", ["category_id"], name: "index_stamps_on_category_id"

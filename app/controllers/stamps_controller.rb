@@ -7,7 +7,7 @@ class StampsController < ApplicationController
     if params[:category_id]
       @stamps = Stamp.where(:rank != nil, category_id: params[:category_id]).all.order("rank ASC").paginate(:page => params[:page], :per_page => 10)
     else
-      @stamps = Stamp.where( :rank != nil).order("rank DESC").all.paginate(:page => params[:page], :per_page => 10)
+      @stamps = Stamp.where( :rank != nil).order("rank ASC").all.paginate(:page => params[:page], :per_page => 10)
     end
 
     respond_to do |format|

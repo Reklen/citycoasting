@@ -5,9 +5,9 @@ class StampsController < ApplicationController
   
   def index
     if params[:category_id]
-      @stamps = Stamp.all.where(:rank != nil, category_id: params[:category_id]).order("rank ASC").paginate(:page => params[:page], :per_page => 10)
+      @stamps = Stamp.where(:rank != nil, category_id: params[:category_id]).all.order("rank ASC").paginate(:page => params[:page], :per_page => 10)
     else
-      @stamps = Stamp.all.where(:rank != nil).order("rank DESC").paginate(:page => params[:page], :per_page => 10)
+      @stamps = Stamp.where( :rank != nil).order("rank DESC").all.paginate(:page => params[:page], :per_page => 10)
     end
 
     respond_to do |format|

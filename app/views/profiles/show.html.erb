@@ -1,30 +1,31 @@
 
 <div class = "row">
-	<div class ="col-md-12">
-		<div class="panel panel-default">
-			<h1><%= @user.username %></h1>
-		</div>
+	<div class ="col-md-3">
+
+			<div class = "panel panel-default"><h1><%= @user.username %></h1></div>
+
 	</div>
-</div>
-<% if @stamps %>
-	<div id="stamps" class="transitions-enabled">	
-  	<% @stamps.each do |stamp| %>
-      <div class="box panel panel-default">
-        <div class = "center">
-          <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
-          <div class = "panel-body">
-            <div class = "pull-left text-left">
-              <p><strong><%= stamp.name if stamp.name %></strong></p>
-              <p><%= stamp.category.name if stamp.category %></p>
-            </div>
-            <div class = "pull-right">
-              <%= stamp.neighborhood.name if stamp.neighborhood %>
-              by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
+  <div class ="col-md-9">
+    <% if @stamps %>
+    	<div id="stamps" class="transitions-enabled">	
+      	<% @stamps.each do |stamp| %>
+          <div class="box panel panel-default" id="stamp_box" >
+            <div class = "center">
+              <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
+              <div class = "panel-body">
+                <div class = "pull-left text-left">
+                  <p><strong><%= stamp.name if stamp.name %></strong></p>
+                  <p><%= stamp.category.name if stamp.category %></p>
+                </div>
+                <div class = "pull-right">
+                  <%= stamp.neighborhood.name if stamp.neighborhood %>
+                  by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        <% end %>
+    	</div>
     <% end %>
-	</div>
-
-<% end %>
+  </div>
+</div>

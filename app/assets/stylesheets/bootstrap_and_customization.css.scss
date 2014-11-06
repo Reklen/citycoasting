@@ -3,7 +3,7 @@
 
 $body-bg:                                                   #ecf0f1;
 $font-family-sans-serif:                'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:                                        45px;
+$navbar-height:                                        40px;
 $navbar-default-bg:                          #22475E;
 $navbar-default-brand-color:      #ecf0f1;
 $navbar-default-link-color:   white;
@@ -47,7 +47,7 @@ body {
 
 .hero-unit {
   background-size:cover;
-  height:300px;
+  height:40%;
   color:white;
   width: 100%;
   background-color:black;
@@ -59,6 +59,9 @@ body {
 }
 #about_font{
 	opacity:1;
+}
+#about_font{
+	padding: 30px;
 }
 
 .navbar .dropdown-toggle a{
@@ -76,6 +79,3 @@ body {
 	width:1110px;
 }
 
-#about_font{
-	padding: 10px 10px 10px 10px;
-}

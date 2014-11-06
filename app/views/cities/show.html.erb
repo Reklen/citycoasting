@@ -24,10 +24,11 @@
 		          <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= stamp.city.name if stamp.city %>
 		          by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
 		          <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> |      
-		         	<% if current_user && !current_user.voted_for?(stamp) %>
+		         	<% if current_user && current_user.voted_for?(stamp) %>
 			          <%= link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
+			        <% else %>
 			          <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %> 
-			         <% end %>
+			        <% end %>
 		        </div>
 		        <div class = "pull-right">
 		          <p><%= stamp.category.name if stamp.category %></p>

@@ -12,14 +12,15 @@
           <div class="box panel panel-default" id="stamp_box" >
             <div class = "center">
               <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
-              <div class = "panel-body">
+              <div class = "panel-body" id ="profile_stamp">
                 <div class = "pull-left text-left">
                   <p><strong><%= stamp.name if stamp.name %></strong></p>
                   <p><%= stamp.category.name if stamp.category %></p>
-                </div>
-                <div class = "pull-right">
                   <%= stamp.neighborhood.name if stamp.neighborhood %>
                   by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
+                </div>
+                <div class = "pull-right">
+
                 </div>
               </div>
             </div>

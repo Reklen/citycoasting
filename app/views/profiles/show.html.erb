@@ -15,9 +15,9 @@
               <div class = "panel-body" id ="profile_stamp">
                 <div class = "pull-left text-left">
                   <p><strong><%= stamp.name if stamp.name %></strong></p>
-                  <p><%= stamp.category.name if stamp.category %></p>
-                  <%= stamp.neighborhood.name if stamp.neighborhood %>, , <%= stamp.city.name if stamp.city %>
                   by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %>
+                  <p><%= stamp.category.name if stamp.category %></p>
+                  <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= stamp.city.name if stamp.city %>
                 </div>
                 <div class = "pull-right">
 

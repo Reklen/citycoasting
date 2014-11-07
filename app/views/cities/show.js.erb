@@ -1,0 +1,7 @@
+$boxes = $('<%= j render('cities/show') %>') 
+$('#stamps').append( $boxes ).imagesLoaded( function(){ $('#stamps').masonry( 'reload'); });
+<% if @stamps.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@stamps) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

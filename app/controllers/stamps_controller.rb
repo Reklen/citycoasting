@@ -80,7 +80,7 @@ class StampsController < ApplicationController
     value = params[:type] == "up" ? 1 : 0
     @stamp = Stamp.find(params[:id])
     @stamp.add_or_update_evaluation(:votes, value, current_user)
-    redirect_to :stamp, notice: "Stamp added to profile! You got geet"
+    redirect_to :stamp, notice: "Stamp added to profile!"
   end
 
 

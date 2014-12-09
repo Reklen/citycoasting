@@ -1,0 +1,12 @@
+<h1 class="center"> Coast the World</h1>
+</br>
+
+<div class = "filter row">
+	<div class ="col-md-12">
+
+			<div>
+				<ul class ="form-group"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Everything", id: "category_select", class: "form-control btn dropdown-toggle" %>
+				</ul>
+			</div>
+	</div>
+</div>

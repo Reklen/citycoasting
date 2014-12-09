@@ -4,6 +4,7 @@ class StampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
+    
     if params[:category_id]
       @stamps = Stamp.where(category_id: params[:category_id])
       @stamps = @stamps.where("rank is not null").all.order("rank ASC").paginate(:page => params[:page], :per_page => 10)
@@ -12,7 +13,7 @@ class StampsController < ApplicationController
     end
 
     respond_to do |format|
-        format.html
+        format.html { render :layout => false } 
         format.js
     end
   end

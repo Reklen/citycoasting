@@ -59,15 +59,21 @@
 
 .jumbotron{
 	height:100%;
-	background-image: url("http://lafilm.edu/sites/default/files/Venice%2520Beach.jpg");
+	background-image: url("http://electraconcepts.files.wordpress.com/2014/04/new-york-city-skyline151.jpg");
 	  background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 10% 120%; 
-	height: 400px;
+    background-position: 0% 60%; 
+	height: 500px;
 	margin: 0 auto;
+	position:relative;
+	top:-60px;
 }
 
 .jumbotron h1{
 	color:white;
 
+}
+
+.jumbotron p{
+	color:white;
 }

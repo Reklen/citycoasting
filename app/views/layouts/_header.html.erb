@@ -47,7 +47,7 @@ Signed in as <%= current_user.name %>. Not you?
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li class = "btn-mini btn-primary">
-                <%= link_to current_user.username , profile_path(current_user.username) %>
+                <%= link_to "Profile" , profile_path(current_user.username) %>
             </li>
             <li class="dropdown">
               
@@ -61,7 +61,7 @@ Signed in as <%= current_user.name %>. Not you?
           <% else %>
             <li><%= link_to "Log In", new_user_session_path %></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle btn-default btn-primary" id="signup_btn" data-toggle="dropdown" > Sign Up<b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle btn-inverse btn-primary" id="signup_btn" data-toggle="dropdown" > Sign Up<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li><%= link_to "Log In", new_user_session_path %></li>
         

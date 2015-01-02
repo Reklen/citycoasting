@@ -6,13 +6,18 @@ $font-family-sans-serif:                'Lato', 'Helvetica Neue', Helvetica, Ari
 $navbar-height:                                        40px;
 $navbar-default-bg:                          #22475E;
 $navbar-default-brand-color:      #ecf0f1;
-$navbar-default-link-color:   white;
-$navbar-btn-inverse-link-color: white;
-$brand-primary:                                    #75B08A;
+
+//$navbar-inverse-link-color-: white;
+//$brand-primary:                                    #75B08A;
 $jumbotron-bg:                                         white;
 
 
 @import 'bootstrap';
+
+.nav .btn-mini{
+	color:white;
+
+}
 
 .center {
      text-align: center;
@@ -32,9 +37,10 @@ body {
 	padding-top: 60px;
 }
 
-.nav .btn-mini a {
+li .btn-mini a {
 
 	color:white;
+	opacity: .92;
 }
 
 .filter{

@@ -22,12 +22,12 @@
 	<body data-no-turbolink>
 	  
 		<%= render 'layouts/header' %>
-
+		<%= render 'layouts/modal' %>
 	  <div class="jumbotron">
 	    <div class="jumbo_content">
 	    	<h1>Coast the World.</h1>
 	    	<p>Discover, Stamp, &amp; Share. Get Going</p></br>
-	    	<%= link_to "Explore More Cities", cities_path, class:"btn btn-primary btn-lg" %>
+	    	<%= link_to "Explore Cities", cities_path, class:"btn btn-primary btn-lg" %>
 	    </div>
 	  </div>
 	  
@@ -38,6 +38,7 @@
 					<%= content_tag(:div, msg, class: "alert alert-info") %>
 				<% end %>
 				<%= render 'stamps/home' %>
+				<!-- Button trigger modal -->
 
 				<div id="stamps" class="transitions-enabled">	
 				  <%= render 'stamps/stamps' %>

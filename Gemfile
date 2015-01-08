@@ -24,8 +24,6 @@ gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-sy
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
-
-
 group :development, :test do
 	gem 'sqlite3'
 	gem "better_errors"

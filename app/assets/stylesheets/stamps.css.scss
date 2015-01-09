@@ -59,11 +59,12 @@
 
 .jumbotron{
 	height:100%;
-	background-image: url("http://electraconcepts.files.wordpress.com/2014/04/new-york-city-skyline151.jpg");
+	background-image: url(asset-path('intro-bg2.jpg'));
 	  background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 0% 50%; 
-	height: 500px;
+    background-position: 90% 50%; 
+    background-size: 100%;
+	height: 650px;
 	margin: 0 auto;
 	position:relative;
 	top:-60px;

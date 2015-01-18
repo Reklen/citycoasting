@@ -20,11 +20,11 @@ Rails.application.routes.draw do
   root "stamps#index"
   get "about" => "pages#about" # creates about_path
 
-  get '(:category_id)', to: 'stamps#index', as: 'category_filter'
+  get 'category/(:category_id)', to: 'stamps#index', as: 'category_filter'
 
   get 'cities/(:id)/(:category_id)', to: 'cities#show', as: 'city_category_filter'
 
-  get 'profiles/:id', to: 'profiles#show', as: 'profile'
+  get ':id', to: 'profiles#show', as: 'profile'
 
   
   # The priority is based upon order of creation: first created -> highest priority.

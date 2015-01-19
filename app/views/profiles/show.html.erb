@@ -6,11 +6,11 @@
 
   <div class ="col-md-9 profile_stamp_sect">
     <% if @stamps %>
-      <div id="stamps" class="transitions-enabled"> 
+      <div id="profile_stamps" class="transitions-enabled"> 
         <% @stamps.each do |stamp| %>
           <div class="box panel panel-default" id="stamp_box" >
             <div class = "center">
-              <%= link_to image_tag(stamp.image.url(:medium)), stamp %>
+              <%= link_to image_tag(stamp.image.url(:medium)), stamp  %>
               <div class = "panel-body" id ="profile_stamp">
                 <div class = "pull-left text-left">
                   <strong><%= stamp.name if stamp.name %></strong><br>

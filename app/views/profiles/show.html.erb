@@ -1,13 +1,11 @@
 
 <div class = "row">
-	<div class ="col-md-2">
-
-			<div class = "panel panel-default center"><h1><%= @user.username %></h1></div>
-
+	<div class ="col-md-3">
+			<div class = "panel panel-default center" id = "profile_nav"><h1><%= @user.username %></h1></div>
 	</div>
-  <div class ="col-md-9">
+  <div class ="col-md-9 profile_stamp_sect">
     <% if @stamps %>
-    	<div id="stamps" class="transitions-enabled">	
+    	<div id="profile_stamps" class="transitions-enabled">	
       	<% @stamps.each do |stamp| %>
           <div class="box panel panel-default" id="stamp_box" >
             <div class = "center">

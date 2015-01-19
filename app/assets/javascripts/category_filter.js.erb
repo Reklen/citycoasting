@@ -1,7 +1,11 @@
 $(function(){
   $('#category_select').on('change', function(){
     var category_id = $(this).val();
+<<<<<<< HEAD
     window.location = "<%= ENV['RAILS_RELATIVE_URL_ROOT'] %>/" + "category/" + category_id;
+=======
+    window.location = "<%= ENV['RAILS_RELATIVE_URL_ROOT'] %>/" + "category/" +  category_id;
+>>>>>>> 43eacf174c9cefb25c352dbe72254ff7f4020969
   });
 });
 

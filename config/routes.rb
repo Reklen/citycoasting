@@ -26,7 +26,11 @@ Rails.application.routes.draw do
 
   get ':id', to: 'profiles#show', as: 'profile'
 
+<<<<<<< HEAD
   get "stamps/modal_signup" => 'stamps#modal_signup', :as => :modal_signup
+=======
+  
+>>>>>>> 43eacf174c9cefb25c352dbe72254ff7f4020969
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

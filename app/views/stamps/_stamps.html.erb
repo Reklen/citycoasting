@@ -17,7 +17,7 @@
         </div>
         <div class = "pull-right">
           <p><%= stamp.category.name if stamp.category %></p>
-          <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= stamp.city.name if stamp.city %>
+          <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= link_to stamp.city.name, city_path(stamp.city.id) if stamp.city %>
         </div>
       </div>
     </div>

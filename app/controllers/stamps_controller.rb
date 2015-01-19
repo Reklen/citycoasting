@@ -84,6 +84,13 @@ class StampsController < ApplicationController
     redirect_to :stamp, notice: "Stamp added to profile!"
   end
 
+  def modal_signup
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

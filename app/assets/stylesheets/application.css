@@ -13,6 +13,7 @@
  *= require jquery.ui.all
  *= require_tree .
  *= require 'masonry/transitions'
+ *= require font-awesome
  *= require_self
 
  */

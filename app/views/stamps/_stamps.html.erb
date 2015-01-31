@@ -5,20 +5,33 @@
         <% x = 0 %>
         <% if stamp.id % 2 == 0  %>
           <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
-          <% if stamp.has_evaluation?(:votes, current_user) %>
-            <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
-              <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
+          <% if user_signed_in? %>
+            <% if stamp.has_evaluation?(:votes, current_user) %>
+              <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
+                <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
+              <% end %>
+            <% else %>
+              <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+                <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
+              <% end %>
             <% end %>
           <% else %>
             <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
               <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
             <% end %>
           <% end %>
+
         <% else %>
           <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
-          <% if stamp.has_evaluation?(:votes, current_user) %>
-            <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
-              <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
+          <% if user_signed_in? %>
+            <% if stamp.has_evaluation?(:votes, current_user) %>
+              <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
+                <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
+              <% end %>
+            <% else %>
+              <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+                <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
+              <% end %>
             <% end %>
           <% else %>
             <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 

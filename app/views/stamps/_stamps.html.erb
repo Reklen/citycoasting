@@ -1,19 +1,42 @@
 <% @stamps.each do |stamp| %>
   <div class="box panel panel-default" id = "stamp_box">
     <div class = "center">
-      <% x = 0 %>
-      <% if stamp.id % 2 == 0  %>
-        <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
-      <% else %>
-        <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
-      <% end %>
+      <div class = "stamp_img">
+        <% x = 0 %>
+        <% if stamp.id % 2 == 0  %>
+          <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
+          <% if stamp.has_evaluation?(:votes, current_user) %>
+            <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
+              <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
+            <% end %>
+          <% else %>
+            <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+              <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
+          <% if stamp.has_evaluation?(:votes, current_user) %>
+            <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
+              <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
+            <% end %>
+          <% else %>
+            <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+              <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
       <div class = "panel-body">
         <div class = "pull-left text-left">
           <strong><%= stamp.name if stamp.name %></strong><br>
           by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
-          <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> |      
-          <% link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
-          <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %> 
+          <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> |    
+
+            <%= link_to "Unstamp", vote_stamp_path(stamp, type: "down"), method: "post" %>
+         
+            <%= link_to "Stamp", vote_stamp_path(stamp, type: "up"), method: "post" %> 
+      
         </div>
         <div class = "pull-right">
           <p><%= stamp.category.name if stamp.category %></p>

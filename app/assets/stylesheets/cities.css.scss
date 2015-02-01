@@ -8,11 +8,12 @@
 
 .city-div{
 	height:300px;
+    padding:-20px;
 }
 
 .city_hdr{position: absolute;
     top: 0;
-    width: 97.2%;
+    width: 100%;
     background-color: white;
     text-align:center;
       filter: alpha(opacity=300); /* internet explorer */
@@ -24,5 +25,9 @@
 
 .city-div img{
 	height:100%;
+    
 }
 
+.cities{
+    padding-left:50px;
+}

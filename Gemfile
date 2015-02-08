@@ -20,11 +20,15 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
+
+#votable gems
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4', require: 'reputation_system'
 gem 'acts_as_votable', '~> 0.10.0'
+
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'font-awesome-rails'
+gem 'acts_as_commentable'
 
 group :development, :test do
 	gem 'sqlite3'

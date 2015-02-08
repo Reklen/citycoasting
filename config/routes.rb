@@ -28,7 +28,9 @@ Rails.application.routes.draw do
 
   get "stamps/modal_signup" => 'stamps#modal_signup', :as => :modal_signup
 
-  
+resources :stamps do
+  resources :comments
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

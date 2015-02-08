@@ -27,6 +27,12 @@ class StampsController < ApplicationController
    
     gon.latcoord = @stamp.adr_coord_lat
     gon.lngcoord = @stamp.adr_coord_lng
+
+    @stamp = Stamp.find(params[:id])
+    @comment = @stamp.comments.new(user_id: current_user)
+    @comments = @stamp.comments.recent.limit(10).all
+
+
   end
 
 

@@ -46,7 +46,7 @@
           by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
           <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> 
         </div>
-        <div class = "pull-right">
+        <div class = "pull-right text-left">
           <p><%= stamp.category.name if stamp.category %><br>
           <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= link_to stamp.city.name, city_path(stamp.city.id) if stamp.city %></p>
         </div>

@@ -1,39 +1,23 @@
 <div class = "row">
 	
 	<div class = "col-md-7">
-		<div class="panel panel-default center">
-				<%= image_tag @stamp.image.url(:large) %>
+		<div class="panel panel-default">
 			<div class="panel-body">
+				<%= image_tag @stamp.image.url(:large), class:"img-responsive" %>
 				<div class = "pull-left">
-					<p><strong><%= @stamp.name if @stamp.name %></strong></p>
+					<strong><%= @stamp.name if @stamp.name %></strong>
 					<p>by <%= link_to @stamp.user.username, profile_path(@stamp.user.username) if @stamp.user %>|
 						<%= link_to "Stamp", vote_stamp_path(@stamp, type: "up"), method: "post" %> </p>
         </div>
-        <div class = "pull-right">
-        	<%= render 'stamps/pricerange_key', :stamp => @stamp %>
-          <p><%= @stamp.category.name if @stamp.category %></p><br>
+        <div class="pull-right">
+    			<%= render 'stamps/pricerange_key', :stamp => @stamp %> |
+          <%= @stamp.category.name if @stamp.category %> |
           <%= pluralize @stamp.reputation_for(:votes).to_i, "vote" %>
         </div>
       </div>
 
-        <div class = "center">
-	        <% if (user_signed_in?) %>
-	        	<% if (current_user && @stamp.user == current_user)||(current_user.role=='admin') %>
-						
-							<%= link_to edit_stamp_path(@stamp) do %>
-		          	<span class="glyphicon glyphicon-edit"></span>
-		            Edit
-		          <% end %> |
-
-							<%= link_to 'Back', stamps_path %> |
-
-							<%= link_to @stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
-			        	<span class="glyphicon glyphicon-trash"></span>Delete
-		        	<% end %><br>
-	        	<% end %>
-	        <% end %>
-	      </div>
 	  </div>
+
 	  <div class="panel panel-default">
 	      <div class="panel-heading">
 				Reviews
@@ -79,6 +63,19 @@
 				<p> <%= link_to @stamp.website, @stamp.website, :target => "_blank"  if @stamp.website %></p>
 				<strong>The Details</strong><br>
 					<p><%= @stamp.description %></p>
+				<div class="pull-right">
+					<% if (user_signed_in?) %>
+	        	<% if (current_user && @stamp.user == current_user)||(current_user.role=='admin') %>
+							<%= link_to edit_stamp_path(@stamp) do %>
+		          	<span class="glyphicon glyphicon-edit"></span>
+		            Edit
+		          <% end %> |
+							<%= link_to @stamp, method: :delete, data: { confirm: 'Are you sure?' } do %>
+			        	<span class="glyphicon glyphicon-trash"></span>Delete
+		        	<% end %><br>
+	        	<% end %>
+	        <% end %>
+	       </div>
 			</div>
 		</div>
 	</div>

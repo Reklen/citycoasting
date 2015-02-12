@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class ="col-md-9 profile_stamp_sect">
+  <div class ="col-md-9 panel panel-default profile_stamp_sect">
     <% if @stamps %>
       <div id="profile_stamps" class="transitions-enabled"> 
         <% @stamps.each do |stamp| %>
@@ -20,8 +20,8 @@
               <%= link_to image_tag(stamp.image.url(:medium)), stamp  %>
               <div class = "panel-body" id ="profile_stamp">
                 <div class = "pull-left text-left">
-                  <strong><%= stamp.name if stamp.name %></strong><br>
-                  by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %><br>
+                  <strong><%= truncate(stamp.name, length: 25) if stamp.name %></strong><br>
+                  by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
                   <%= stamp.category.name if stamp.category %><br>
                   <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= stamp.city.name if stamp.city %><br>
                 </div>

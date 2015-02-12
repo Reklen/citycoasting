@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :evaluations, class_name: "RSEvaluation", as: :source
   has_reputation :votes, source: {reputation: :votes, of: :stamps}, aggregated_by: :sum
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => ActionController::Base.helpers.asset_path('default_profile.svg')
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   
 

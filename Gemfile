@@ -31,7 +31,8 @@ gem 'font-awesome-rails'
 gem 'acts_as_commentable'
 
 group :development, :test do
-	gem 'sqlite3'
+	#gem 'sqlite3'
+	gem 'pg'
 	gem "better_errors"
 	gem "binding_of_caller"
 end

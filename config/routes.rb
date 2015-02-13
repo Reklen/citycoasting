@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
 #FB Login
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "user_registrations" }
 
   root "stamps#index"
   get "about" => "pages#about" # creates about_path

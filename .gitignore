@@ -18,4 +18,4 @@
 /public/system/*
 
 # Ignore Secrets config
-config/secret_dev.yml
+config/secrets.yml

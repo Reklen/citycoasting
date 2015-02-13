@@ -17,5 +17,6 @@
 .DS_Store
 /public/system/*
 
-# Ignore Secrets config
-config/secrets.yml
+
+# Ignore application configuration
+/config/application.yml

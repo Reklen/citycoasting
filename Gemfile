@@ -21,6 +21,8 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
 
+gem "figaro"
+
 #votable gems
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4', require: 'reputation_system'
 gem 'acts_as_votable', '~> 0.10.0'

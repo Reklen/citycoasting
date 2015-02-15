@@ -21,6 +21,9 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
 
+#Gem For PostgreSQL
+gem 'pg'
+
 gem "figaro"
 
 #votable gems
@@ -34,13 +37,12 @@ gem 'acts_as_commentable'
 
 group :development, :test do
 	#gem 'sqlite3'
-	gem 'pg'
 	gem "better_errors"
 	gem "binding_of_caller"
+	gem 'rspec-rails', '~> 3.0'
 end
 
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
 # bundle exec rake doc:rails generates the API under doc/api.

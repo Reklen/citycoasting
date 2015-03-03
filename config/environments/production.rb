@@ -93,7 +93,7 @@ Rails.application.configure do
 
   #Required for Heroku
   #Note to set to actual host name (www.citycoasting.com)
-  config.action_mailer.default_url_options = { host: 'http://citycoasting.com/' }
+  config.action_mailer.default_url_options = { host: 'http://citycoasting.com' }
 
   #Sets Paperclip to upload images to Amazon S3
   config.paperclip_defaults = {

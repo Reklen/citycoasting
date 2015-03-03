@@ -24,11 +24,11 @@
 		<%= render 'layouts/header' %>
 		<%= render 'layouts/modal' %>
 		
-	  <div class="jumbotron visible-desktop hidden-phone">
+	  <div class="jumbotron visible-lg">
 	    <div class="jumbo_content">
 	    	<% flash.each do |name, msg| %>
 					<%= content_tag(:div, msg, class: "alert alert-info") %>
-				<% end %>
+			<% end %>
 	    	<h1>Explore the World</h1>
 	    	<p>Travel recommendations curated by locals and fellow travelers.</p></br>
 	    	<%= link_to "Select A Destination", cities_path, class:"btn btn-danger btn-lg" %>

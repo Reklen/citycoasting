@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
   	@stamp = Stamp.find(params[:stamp_id])
   	@comment = @stamp.comments.new(comment_params)
     if user_signed_in? 
-      Rails.logger.info "This shit is apparently thinking i'm signed in"
       @comment.user_id = current_user.id
       @comment.save
       if @comment.save

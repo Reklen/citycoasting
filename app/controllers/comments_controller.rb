@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
       @comment.save
       if @comment.save
         respond_to do |format|
-          format.html { redirect_to @stamp, notice: 'Thanks for the review!' }
+          format.html { redirect_to @stamp, notice: 'Thanks for the Comment!' }
           format.json { render :show, status: :ok, location: @stamp }
         end
       end
@@ -23,4 +23,4 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:comment)
     end
-end
+endg

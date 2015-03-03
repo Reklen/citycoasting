@@ -20,10 +20,11 @@ class StampsController < ApplicationController
 
   def show
 
-    if user_signed_in? 
-    else
-      redirect_to new_user_registration_path, notice: "Please sign up to view a stamp."
-    end
+    #Allowing all users to access stamp pgs
+    # if user_signed_in? 
+    # else
+    #   redirect_to new_user_registration_path, notice: "Please sign up to view a stamp."
+    # end
    
     gon.latcoord = @stamp.adr_coord_lat
     gon.lngcoord = @stamp.adr_coord_lng

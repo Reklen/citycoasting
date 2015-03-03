@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def new_user_geet(new_user)
   	user = new_user
-  	mail(to: 'hello@citycoasting.com', subject: 'New user has signed up CityCoasting')
+  	mail(to: 'hello@citycoasting.com', subject: "New user, #{resource.username}, has signed up CityCoasting")
   end
 
 end

@@ -7,7 +7,12 @@ class CommentsController < ApplicationController
     @comment.save
   	if @comment.save
       respond_to do |format|
-        format.html { redirect_to @stamp, notice: 'Thanks for the review!' }
+        format.html { redirect_to @stamp, notice: 'Thanks for the Comment!' }
+        format.json { render :show, status: :ok, location: @stamp }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to new_user_registration_path, notice: "Please sign up to comment on a stamp." }
         format.json { render :show, status: :ok, location: @stamp }
       end
     end

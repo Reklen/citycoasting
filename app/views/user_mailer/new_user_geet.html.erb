@@ -1,6 +1,6 @@
-<p>What up Boss! <strong><%= user.username %></strong> has gotten geet on CC!<br>
+<p>What up Boss! <strong><%= @user.username %></strong> has gotten geet on CC!<br>
 
 You can check their profile out at:
 
-<%= profile_url(user.username) %></p>
+<%= link_to "profile", profile_url(@user.username) %></p>
 

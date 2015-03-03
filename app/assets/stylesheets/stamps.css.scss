@@ -45,7 +45,13 @@
 }
 
 .stamp_img:hover{
-	opacity:.9;
+	background-color: black;
+
+
+}
+.stamp_img:hover img{
+
+    opacity:0.5;
 
 }
 

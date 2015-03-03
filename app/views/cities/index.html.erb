@@ -1,128 +1,127 @@
-<div class = "container-fluid">
-	<div class="row-fluid">
-		<div class ="page-header">
-			<h1>Discover your city</h1>
+
+	<div class="row">
+		<div class ="page-header col-md-12">
+			<h1>Europe</h1>
 		</div>
+  </div>
 
-    <%= link_to(city_path(12)) do %>
-		  <div class="col-md-12 box  city-div">
-		  	<img src ="http://www.nawa.org/wp-content/uploads/2014/06/rome-main.jpg" >
-			  	<div class = "city_hdr">
-			  		<h1>Rome</h1>
-			  	</div>
-		  	</img>
-		  </div>
-		<% end %>
-    
-    <%= link_to(city_path(1)) do %>
-		  <div class="col-md-12 box  city-div">
-		  	<img src ="http://www.nyccriminallawyers.com/wp-content/uploads/2013/10/raiser-kenniff-banner-nyc-dwi-laws.jpg" >
-			  	<div class = "city_hdr">
-			  		<h1>NYC</h1>
-			  	</div>
-		  	</img>
-		  </div>
-		<% end %>
-	  
-	  <%= link_to(city_path(4)) do %>
-		  <div class="col-md-12 box city-div">
-		  	<img src ="http://www.discoveramerica.com/~/media/efd4437161da4351ba1747a4d2f08056/miami%20feature.jpg?w=1046&h=380&bg=ffffff" >
-			  	<div class = "city_hdr">
-			  		<h1>Miami</h1>
-			  	</div> 
-		  	</img>
-		  </div>
-		<% end %>
-
-		<%= link_to(city_path(2)) do %>
-		  <div class="col-md-12 box  city-div" href = "#">
-		  	<img src ="http://static.panoramio.com/photos/large/68553634.jpg" >
-			  	<div class = "city_hdr">
-			  		<h1>Chicago</h1>
-			  	</div>
-          </img>
-		  </div>
-		<% end %>
-
-		<%= link_to(city_path(5)) do %>
-		  <div class="col-md-12 box  city-div" href = "#">
-		  	<img src ="http://www.hotelscheap.org/discount-travel-blog/wp-content/uploads/2012/05/San-Francisco-Skyline1.jpg" >
-			  	<div class = "city_hdr">
-			  		<h1>San Francisco</h1>
-			  	</div>
-		  	</img>
-		  </div>
-		<% end %>
-
-    <%= link_to(city_path(3)) do %>
-      <div class="col-md-12 box  city-div" href = "#">
-        <img src ="http://www.travinspire.com/upload/rh/tour/img/image_1624986497_los%20angles%20city.jpg" >
-          <div class = "city_hdr">
-            <h1>Los Angeles</h1>
+  <div class = "row city-group">
+    <div class="col-md-6">
+      <%= link_to(city_path(12)) do %>
+          <div class="city">
+    		  	<img src ="http://www.nawa.org/wp-content/uploads/2014/06/rome-main.jpg" >
+    		  	<h1><strong>Rome</strong></h1>
           </div>
-        </img>
-      </div>
-    <% end %>
-
-    <%= link_to(city_path(7)) do %>
-      <div class="col-md-12 box  city-div" href = "#">
-        <img src ="https://ppcdn.500px.org/15020865/1c62c5672c63aab48adb54294bd48f0bce6c7c7b/5.jpg" >
-          <div class = "city_hdr">
-            <h1>Seattle</h1>
+  		<% end %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to(city_path(13)) do %>
+          <div class="city">
+            <img src ="http://www.trips2italy.com/media/catalog/category/cache/763-295-florence_tuscany_city.jpg" >
+            <h1><strong>Florence</strong></h1>
           </div>
-        </img>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class ="page-header col-md-12">
+      <h1>United States</h1>
+    </div>
+  </div>
 
-    <%= link_to(city_path(6)) do %>
-      <div class="col-md-12 box  city-div" href = "#">
-        <img src ="http://s3.amazonaws.com/tgc-ee2/articles/Boston-skyline.jpg" >
-          <div class = "city_hdr">
-            <h1>Boston</h1>
+  <div class = "row city-group">
+    <div class="col-md-8">
+      <%= link_to(city_path(1)) do %>
+          <div class="city">
+            <img src ="http://www.nyccriminallawyers.com/wp-content/uploads/2013/10/raiser-kenniff-banner-nyc-dwi-laws.jpg" >
+            <h1><strong>New York</strong></h1>
           </div>
-        </img>
-      </div>
-    <% end %>
-
-    <%= link_to(city_path(9)) do %>
-      <div class="col-md-12 box  city-div" href = "#">
-        <img src ="http://upload.wikimedia.org/wikipedia/commons/0/06/AustinSkylineLouNeffPoint-2010-03-29-b.JPG" >
-          <div class = "city_hdr">
-            <h1>Austin</h1>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to(city_path(4)) do %>
+          <div class="city">
+            <img src ="http://www.discoveramerica.com/~/media/efd4437161da4351ba1747a4d2f08056/miami%20feature.jpg?w=1046&h=380&bg=ffffff" >
+            <h1><strong>Miami</strong></h1>
           </div>
-        </img>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
 
-    <%= link_to(city_path(10)) do %>
-      <div class="col-md-12 box  city-div" href = "#">
-        <img src ="http://www.datatechlab.com/wp-content/uploads/2014/03/data-recovery-in-brooklyn.jpg" >
-          <div class = "city_hdr">
-            <h1>Brooklyn</h1>
+  <div class = "row city-group">
+    <div class="col-md-4">
+      <%= link_to(city_path(2)) do %>
+          <div class="city">
+            <img src ="http://static.panoramio.com/photos/large/68553634.jpg" >
+            <h1><strong>Chicago</strong></h1>
           </div>
-        </img>
-      </div>
-    <% end %>
-
-    <%= link_to(city_path(11)) do %>
-      <div class="col-md-12 box  city-div" href = "#">
-        <img src ="http://tgrolloff.com/wp-content/uploads/2014/03/denver-skyline.jpg" >
-          <div class = "city_hdr">
-            <h1>Denver</h1>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to(city_path(5)) do %>
+          <div class="city">
+            <img src ="http://www.hotelscheap.org/discount-travel-blog/wp-content/uploads/2012/05/San-Francisco-Skyline1.jpg" >
+            <h1><strong>San Francisco</strong></h1>
           </div>
-        </img>
-      </div>
-    <% end %>
-
-    <%= link_to(city_path(13)) do %>
-      <div class="col-md-12 box  city-div" href = "#">
-        <img src ="http://www.trips2italy.com/media/catalog/category/cache/763-295-florence_tuscany_city.jpg">
-          <div class = "city_hdr">
-            <h1>Florence</h1>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to(city_path(3)) do %>
+          <div class="city">
+            <img src ="http://www.travinspire.com/upload/rh/tour/img/image_1624986497_los%20angles%20city.jpg" >
+            <h1><strong>Los Angeles</strong></h1>
           </div>
-        </img>
-      </div>
-    <% end %>    
+      <% end %>
+    </div>
+  </div>
 
-	</div>
-</div>
+  <div class = "row city-group">
+    <div class="col-md-4">
+      <%= link_to(city_path(6)) do %>
+          <div class="city">
+            <img src ="http://s3.amazonaws.com/tgc-ee2/articles/Boston-skyline.jpg" >
+            <h1><strong>Boston</strong></h1>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <%= link_to(city_path(7)) do %>
+          <div class="city">
+            <img src ="https://ppcdn.500px.org/15020865/1c62c5672c63aab48adb54294bd48f0bce6c7c7b/5.jpg" >
+            <h1><strong>Seattle</strong></h1>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class = "row city-group">
+    <div class="col-md-4">
+      <%= link_to(city_path(9)) do %>
+          <div class="city">
+            <img src ="http://upload.wikimedia.org/wikipedia/commons/0/06/AustinSkylineLouNeffPoint-2010-03-29-b.JPG" >
+            <h1><strong>Austin</strong></h1>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to(city_path(10)) do %>
+          <div class="city">
+            <img src ="http://www.datatechlab.com/wp-content/uploads/2014/03/data-recovery-in-brooklyn.jpg" >
+            <h1><strong>Brooklyn</strong></h1>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to(city_path(11)) do %>
+          <div class="city">
+            <img src ="http://tgrolloff.com/wp-content/uploads/2014/03/denver-skyline.jpg" >
+            <h1><strong>Denver</strong></h1>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+ 

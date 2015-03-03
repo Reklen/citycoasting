@@ -21,9 +21,7 @@ class StampsController < ApplicationController
   def show
 
     #Allowing all users to access stamp pgs
-    if user_signed_in?
-      @comment = @stamp.comments.new(user_id: current_user) 
-    end
+    # if user_signed_in? 
     # else
     #   redirect_to new_user_registration_path, notice: "Please sign up to view a stamp."
     # end
@@ -32,6 +30,7 @@ class StampsController < ApplicationController
     gon.lngcoord = @stamp.adr_coord_lng
 
     @stamp = Stamp.find(params[:id])
+    @comment = @stamp.comments.new(user_id: current_user)
     @comments = @stamp.comments.recent.limit(10).all
 
 

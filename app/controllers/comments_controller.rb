@@ -4,21 +4,19 @@ class CommentsController < ApplicationController
   	@stamp = Stamp.find(params[:stamp_id])
   	@comment = @stamp.comments.new(comment_params)
     if user_signed_in? 
+      Rails.logger.info "This shit is apparently thinking i'm signed in"
       @comment.user_id = current_user.id
       @comment.save
-    else
-      respond_to do |format|
-        format.html { redirect_to new_user_registration_path, notice: "Please sign up to comment on a stamp." }
-        format.json { render :show, status: :ok, location: @stamp }
+      if @comment.save
+        respond_to do |format|
+          format.html { redirect_to @stamp, notice: 'Thanks for the Comment!' }
+          format.json { render :show, status: :ok, location: @stamp }
+        end
       end
+    else
+      redirect_to new_user_registration_path, notice: "Please sign up to comment on a stamp." 
     end
 
-  	if @comment.save
-      respond_to do |format|
-        format.html { redirect_to @stamp, notice: 'Thanks for the Comment!' }
-        format.json { render :show, status: :ok, location: @stamp }
-      end
-    end
   end
 
   private

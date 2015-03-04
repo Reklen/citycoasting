@@ -1,5 +1,5 @@
 <% @stamps.each do |stamp| %>
-  <div class="box panel panel-default" id = "stamp_box">
+  <div class="stamp_box box panel panel-default" id = "stamp_<%= stamp.id %>">
     <div class = "center">
       <div class = "stamp_img">
         <% x = 0 %>
@@ -7,16 +7,16 @@
           <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
           <% if user_signed_in? %>
             <% if stamp.has_evaluation?(:votes, current_user) %>
-              <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
+              <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post", remote: true) do %>
                 <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
               <% end %>
             <% else %>
-              <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+              <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post", remote: true) do %> 
                 <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
               <% end %>
             <% end %>
           <% else %>
-            <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+            <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post", remote: true) do %> 
               <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
             <% end %>
           <% end %>
@@ -25,11 +25,11 @@
           <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
           <% if user_signed_in? %>
             <% if stamp.has_evaluation?(:votes, current_user) %>
-              <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post") do %>
+              <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post", remote: true) do %>
                 <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
               <% end %>
             <% else %>
-              <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+              <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post", remote: true) do %> 
                 <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
               <% end %>
             <% end %>

@@ -89,7 +89,12 @@ class StampsController < ApplicationController
       value = params[:type] == "up" ? 1 : 0
       @stamp = Stamp.find(params[:id])
       @stamp.add_or_update_evaluation(:votes, value, current_user)
-      redirect_to :stamp, notice: "Stamp added to profile!"
+      
+      respond_to do |format|
+        format.html { redirect_to(:back)}
+        format.js {render inline: "location.reload(false);" }
+      end
+
     else
       redirect_to new_user_registration_path, notice: "Please sign up to add a stamp."
     end

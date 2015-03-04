@@ -4,10 +4,6 @@ class StampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
-
-    # unless user_signed_in?
-    #   redirect_to root_path, flash: { manifesto_modal: true }
-    # end
     
     if params[:category_id]
       @stamps = Stamp.where(category_id: params[:category_id])

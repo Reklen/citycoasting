@@ -34,7 +34,7 @@
 				<% end %> 
 				<% @comments.each do |comment| %>
 					<hr>
-					<p><strong><%= link_to comment.user.username, profile_path(@stamp.user.username)  if comment.user %></strong> -  <%= comment.created_at.strftime("%m/%d/%Y") %></p>
+					<p><strong><%= link_to comment.user.username, profile_path(comment.user.username)  if comment.user %></strong> -  <%= comment.created_at.strftime("%m/%d/%Y") %></p>
 					<p><%= comment.comment %></p>
 				<% end %>
 			</div>

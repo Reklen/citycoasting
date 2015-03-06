@@ -7,9 +7,9 @@ class StampsController < ApplicationController
     
     if params[:category_id]
       @stamps = Stamp.where(category_id: params[:category_id])
-      @stamps = @stamps.where("rank is not null").all.order("rank ASC").paginate(:page => params[:page], :per_page => 5)
+      @stamps = @stamps.where("rank is not null").all.order("rank ASC").paginate(:page => params[:page], :per_page => 10)
     else
-      @stamps = Stamp.where("rank is not null").order("rank ASC").all.paginate(:page => params[:page], :per_page => 5)
+      @stamps = Stamp.where("rank is not null").order("rank ASC").all.paginate(:page => params[:page], :per_page => 10)
     end
 
     respond_to do |format|
@@ -89,7 +89,7 @@ class StampsController < ApplicationController
       value = params[:type] == "up" ? 1 : 0
       @stamp = Stamp.find(params[:id])
       @stamp.add_or_update_evaluation(:votes, value, current_user)
-      
+
       respond_to do |format|
         format.html { redirect_to(:back)}
         format.js

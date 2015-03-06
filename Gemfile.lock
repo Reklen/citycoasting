@@ -121,6 +121,7 @@ GEM
     minitest (5.3.4)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    newrelic_rpm (3.10.0.279)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     oauth2 (0.8.1)
@@ -243,6 +244,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   masonry-rails (~> 0.2.0)
+  newrelic_rpm
   omniauth
   omniauth-facebook (= 1.4.0)
   paperclip!

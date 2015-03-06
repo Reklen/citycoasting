@@ -21,10 +21,14 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
 
+
 #Gem For PostgreSQL
 gem 'pg'
 
 gem "figaro"
+
+#NewRelic
+gem 'newrelic_rpm'
 
 #votable gems
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4', require: 'reputation_system'

@@ -12,6 +12,20 @@
   </div>
 
   <div class ="col-md-9 panel panel-default profile_stamp_sect">
+    <div role="tabpanel">
+    <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li>
+          <%= link_to "Stamps", profile_path(@user.username) %>
+        </li>
+        <li class="active">
+          <%= link_to "Added", profile_post_path(@user.username) %>
+        </li>
+<!--         <li role="presentation">
+          <%#= link_to "Cities", profile_cities_path(@user.username) %>
+        </li> -->
+      </ul>
+
     <% if @stamps %>
       <div id="profile_stamps" class="transitions-enabled"> 
         <% @stamps.each do |stamp| %>

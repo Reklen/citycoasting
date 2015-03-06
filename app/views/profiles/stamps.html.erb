@@ -1,0 +1,51 @@
+
+<div class = "row">
+	<div class ="col-md-3">
+    <div class = "panel panel-default center" id = "profile_nav">
+      <div class="panel-heading">
+        <h1><%= @user.username %></h1>
+      </div>
+      <div class="panel-body center">
+        <%= image_tag @user.image.url(:medium), class:"img-responsive" %>
+      </div>
+    </div>
+  </div>
+
+  <div class ="col-md-9 panel panel-default profile_stamp_sect">
+    <div role="tabpanel">
+    <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+          <%= link_to "Stamps", profile_path(@user.username) %>
+        </li>
+        <li role="presentation">
+          <%= link_to "Added", profile_post_path(@user.username) %>
+        </li>
+        <!-- <li role="presentation">
+          <%#= link_to "Cities", profile_cities_path(@user.username) %>
+        </li> -->
+      </ul>
+
+    <% if @stamps %>
+      <div id="profile_stamps" class="transitions-enabled"> 
+        <% @stamps.each do |stamp| %>
+          <div class="box panel panel-default col-md-4" id="profile_stamp_box" >
+            <div class = "center">
+              <%= link_to image_tag(stamp.image.url(:medium)), stamp  %>
+              <div class = "panel-body" id ="profile_stamp">
+                <div class = "pull-left text-left">
+                  <strong><%= truncate(stamp.name, length: 25) if stamp.name %></strong><br>
+                  by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
+                  <%= stamp.category.name if stamp.category %><br>
+                  <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= stamp.city.name if stamp.city %><br>
+                </div>
+                <div class = "pull-right">
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

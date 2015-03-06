@@ -24,7 +24,10 @@ Rails.application.routes.draw do
 
   get 'cities/(:id)/(:category_id)', to: 'cities#show', as: 'city_category_filter'
 
-  get ':id', to: 'profiles#show', as: 'profile'
+  get ':id', to: 'profiles#stamps', as: 'profile'
+  get '(:id)/posts', to: 'profiles#posts', as: 'profile_post'
+  get 'id/cities', to: 'profiles#cities', as: 'profile_cities'
+
 
   get "stamps/modal_signup" => 'stamps#modal_signup', :as => :modal_signup
 

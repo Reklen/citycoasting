@@ -6,7 +6,7 @@
         <% if stamp.id % 2 == 0  %>
           <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
           <% if user_signed_in? %>
-            <% if stamp.has_evaluation?(:votes, current_user) %>
+            <% if stamp.evaluations.find_by(source_id: current_user.id).value > 0 %>
               <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post", remote: true) do %>
                 <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
               <% end %>
@@ -24,7 +24,7 @@
         <% else %>
           <%= link_to image_tag(stamp.image.url(:rendered2)), stamp %>
           <% if user_signed_in? %>
-            <% if stamp.has_evaluation?(:votes, current_user) %>
+            <% if stamp.evaluations.find_by(source_id: current_user.id).value > 0 %>
               <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post", remote: true) do %>
                 <i class="fa fa-camera-retro fa-5x stamp_layover_selected center"></i>
               <% end %>
@@ -34,7 +34,7 @@
               <% end %>
             <% end %>
           <% else %>
-            <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post") do %> 
+            <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post", remote: true) do %> 
               <i class="fa fa-camera-retro fa-5x stamp_layover center"></i>
             <% end %>
           <% end %>

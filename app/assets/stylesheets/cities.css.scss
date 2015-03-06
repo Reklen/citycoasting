@@ -13,13 +13,16 @@
 }
 .city{
   height:300px;
-  background-color:black;
 }
 .city img{
   width:100%;
   height:100%;
-  opacity:.7;
 }
+
+.city:hover{
+  background-color:black;
+}
+
 .city:hover img{
   opacity:.5;
 }

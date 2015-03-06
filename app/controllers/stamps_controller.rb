@@ -94,7 +94,7 @@ class StampsController < ApplicationController
         format.html { redirect_to(:back)}
         format.js
       end
-      value = params[:type] == "up" ? 1 : 0
+
     else
       redirect_to new_user_registration_path, notice: "Please sign up to add a stamp."
     end

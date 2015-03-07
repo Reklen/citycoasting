@@ -32,29 +32,33 @@
 	position: absolute; 
 	z-index: 1; 
 	top: 30%; 
-	left: 43%; 
-	color:white; 
+	left: 40%; 
+	background:none; 
 	visibility:hidden;
+	border:solid 3px white;
+	border-radius:0;
+	opacity:.9;
 }
 
 .stamp_layover_selected{
 	position: absolute; 
 	z-index: 1; 
 	top: 30%; 
-	left: 43%; 
+	left: 40%; 
 	visibility:hidden;
-	color:#0099cc
+	color: #000000;
+	background-color:white;
+	border:solid 3px white;
+	border-radius:0;
+	opacity:.9;
 }
 
 .stamp_img:hover{
 	background-color: black;
-
-
 }
+
 .stamp_img:hover img{
-
     opacity:0.5;
-
 }
 
 .stamp_img:hover .stamp_layover{
@@ -62,8 +66,29 @@
 }
 
 .stamp_layover:hover{
-	color:#0099cc;
+	background:none;
+	border:solid 3px white;
+	color: white;
+	opacity:1;
 }
+.stamp_layover_selected:hover{
+	background:white;
+	border:solid 3px white;
+	color: #000000;
+	opacity:1;
+}
+
+.stamp_layover:active{
+	background:none;
+	border:solid 3px white;
+	color: white;
+}
+.stamp_layover_selected:active{
+	background:white;
+	border:solid 3px white;
+	 color: #000000;
+}
+
 
 .stamp_img:hover .stamp_layover_selected{
 	visibility:visible;

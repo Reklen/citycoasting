@@ -89,10 +89,10 @@ class StampsController < ApplicationController
       value = params[:type] == "up" ? 1 : 0
       @stamp = Stamp.find(params[:id])
       @stamp.add_or_update_evaluation(:votes, value, current_user)
-
       respond_to do |format|
-        format.html { redirect_to(:back)}
+        #format.html { redirect_to(:back)}
         format.js
+        format.json { render json: @stamp.to_json} 
       end
 
     else

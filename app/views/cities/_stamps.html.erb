@@ -5,7 +5,6 @@
       <div class = "center">
         <div class = "stamp_img">
             <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
-  
           <% if user_signed_in? %>
             <% if stamp.evaluations.find_by(source_id: current_user.id) != nil %>
               <% if stamp.evaluations.find_by(source_id: current_user.id).value < 0 %>

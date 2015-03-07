@@ -1,10 +1,10 @@
 $(document.body).on
 
-$ ->
-	$('#stamps').imagesLoaded ->
-		$('#stamps').masonry
-			itemSelector: '.box'
-			isFitWidth: true
+# $ ->
+# 	$('#stamps').imagesLoaded ->
+# 		$('#stamps').masonry
+# 			itemSelector: '.box'
+# 			isFitWidth: true
 
 jQuery ->
   if $('.pagination').length

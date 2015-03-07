@@ -1,12 +1,11 @@
-
-</br>
-
-<div class = "filter row">
+<br>
+<div class = "row filter">
 	<div class ="col-md-12">
-
+    <div class="col-md-offset-4 col-md-4">
 			<div>
-				<ul class ="form-group"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Everything", id: "category_select", class: "form-control btn dropdown-toggle" %>
+        <ul class ="form-group center"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Select a Category", id: "category_select", class: "form-control btn dropdown-toggle" %>
 				</ul>
 			</div>
+    </div>
 	</div>
 </div>

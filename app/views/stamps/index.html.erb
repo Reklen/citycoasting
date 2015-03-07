@@ -40,18 +40,18 @@
 	  </div>
 	  
 		<div class ="container">
-	    <div class = "container-fluid">
+
 	    
 				<h1 class ="center">Featured Places</h1>
 				<%= render 'stamps/home' %>
 				<!-- Button trigger modal -->
 
-				<div id="stamps" class="transitions-enabled">	
+				<div id="stamps" class="row">	
 				  <%= render 'stamps/stamps' %>
 				</div>
 
 				<%= will_paginate @stamps %>
-	  	</div>
+
 		</div>
 
 	</body>

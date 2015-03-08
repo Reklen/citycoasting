@@ -21,6 +21,10 @@
                   <button class="btn btn-lg btn-primary stamp_layover center"><strong>STAMP</strong></button>
                 <% end %>
               <% end %>
+            <% else %>
+              <%= link_to("#", data: {toggle: "modal", target: "#myModal"}) do %> 
+                <button class="btn btn-lg btn-primary stamp_layover center"><strong>STAMP</strong></button>
+              <% end %>
             <% end %>
           </div>
         </div>

@@ -17,7 +17,14 @@
             <% end %>
           <% end %>
         </div>
-        <hr>
+        <br>
+        <div class = "pull-left">
+          <%= @user.followers_count %> Followers
+        </div>
+        <div class = "pull-right">
+          <%= @user.follow_count %> Following
+        </div>
+        <br><hr>
         <div class = "pull-left">
           <%= @stamps.count %> Stamps
         </div>

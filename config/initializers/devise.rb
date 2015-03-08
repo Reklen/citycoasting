@@ -22,7 +22,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   require 'omniauth-facebook' 
 
-  config.omniauth :facebook, "1505096556404291", "8997c9ef91ee7902b955f4efbf5c4d64", secure_image_url: true, image_size: {width: 300, height: 250}
+  config.omniauth :facebook, "1505096556404291", "8997c9ef91ee7902b955f4efbf5c4d64", secure_image_url: true, image_size: {width: '300', height: '250'}
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

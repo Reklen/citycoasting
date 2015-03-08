@@ -7,6 +7,13 @@
       </div>
       <div class="panel-body center">
         <%= image_tag @user.image.url(:medium), class:"img-responsive" %>
+        <hr>
+        <div class = "pull-left">
+          <%= @stamps.count %> Stamps
+        </div>
+        <div class = "pull-right">
+          <%= @posts.count %> Posts
+        </div>
       </div>
     </div>
   </div>
@@ -33,7 +40,7 @@
           <div class="box panel panel-default col-md-4" id="profile_stamp_box" >
             <div class = "center">
               <strong><%= city.name  %></strong>
-              <%= link_to image_tag(stamp.image.url(:medium)), stamp  %> 
+              <%= link_to image_tag(stamp.image.url(:medium)), city  %> 
             </div>
           </div>
         <% end %>

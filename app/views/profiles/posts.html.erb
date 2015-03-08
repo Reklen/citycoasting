@@ -7,6 +7,13 @@
       </div>
       <div class="panel-body center">
         <%= image_tag @user.image.url(:medium), class:"img-responsive" %>
+        <hr>
+        <div class = "pull-left">
+          <%= @stamps.count %> Stamps
+        </div>
+        <div class = "pull-right">
+          <%= @posts.count %> Posts
+        </div>
       </div>
     </div>
   </div>

@@ -7,6 +7,13 @@ class ProfilesController < ApplicationController
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
       @posts = @user.stamps
       @stamps = Stamp.evaluated_by(:votes, @user)
+      @cities = []
+      @stamps.each do |stamp|
+        unless @cities.include?(stamp)
+          @cities << stamp.city
+        end
+      end
+      @cities = @cities.uniq{|x| x.id}
 
       respond_to do |format|
         format.html
@@ -24,6 +31,13 @@ class ProfilesController < ApplicationController
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
       @posts = @user.stamps
       @stamps = Stamp.evaluated_by(:votes, @user)
+      @cities = []
+      @stamps.each do |stamp|
+        unless @cities.include?(stamp)
+          @cities << stamp.city
+        end
+      end
+      @cities = @cities.uniq{|x| x.id}
 
       respond_to do |format|
         format.html

@@ -4,7 +4,6 @@ class StampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
-    
     if params[:category_id]
       @stamps = Stamp.where(category_id: params[:category_id])
       @stamps = @stamps.where("rank is not null").all.order("rank ASC").paginate(:page => params[:page], :per_page => 10)
@@ -97,6 +96,21 @@ class StampsController < ApplicationController
 
     else
       redirect_to new_user_registration_path, notice: "Please sign up to add a stamp."
+    end
+  end
+
+  def explore
+     if params[:category_id]
+      @category = Category.where(id: params[:category_id]) #not needed right now
+      @stamps = Stamp.where(category_id: params[:category_id])
+      @stamps = @stamps.where("rank is not null").all.order("rank ASC").paginate(:page => params[:page], :per_page => 10)
+    else
+      @stamps = Stamp.where("rank is not null").order("rank ASC").all.paginate(:page => params[:page], :per_page => 10)
+    end
+
+    respond_to do |format|
+        format.html 
+        format.js
     end
   end
 

@@ -20,15 +20,19 @@ Rails.application.routes.draw do
   root "stamps#index"
   get "about" => "pages#about" # creates about_path
 
-  get 'category/(:category_id)', to: 'stamps#index', as: 'category_filter'
+
+  get 'explore', to: 'stamps#explore', as: 'explore'
+
+  # get 'explore/category/{:id}' to 'stamps#explore', as'explore'
+
+  get 'explore/(:category_id)', to: 'stamps#explore', as: 'category_filter'
 
   get 'cities/(:id)/(:category_id)', to: 'cities#show', as: 'city_category_filter'
+
 
   get ':id', to: 'profiles#stamps', as: 'profile'
   get '(:id)/posts', to: 'profiles#posts', as: 'profile_post'
   get 'id/cities', to: 'profiles#cities', as: 'profile_cities'
-
-
   get "stamps/modal_signup" => 'stamps#modal_signup', :as => :modal_signup
 
 resources :stamps do

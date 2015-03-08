@@ -16,7 +16,24 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><%= link_to "Cities", cities_path %></li>
-          <li><%= link_to "Explore", cities_path %></li>
+          <li class="dropdown">
+            <a href="#"  role="menu" aria-expanded="false">Explore<span class="caret"></span></a>
+            <ul class="dropdown-menu multi-level" role="menu">
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">Categories</a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Eat", category_filter_path(1) %></li>
+                  <li><%= link_to "Drink", category_filter_path(2) %></li>
+                  <li><%= link_to "Stay", category_filter_path(3) %></li>
+                  <li><%= link_to "Shop", category_filter_path(4) %></li>
+                  <li><%= link_to "Explore", category_filter_path(5) %></li>
+                 <!--  <li><%#= link_to "Event", category_filter_path(6) %></li> no events at the moment--> 
+                  <li><%= link_to "Coffee", category_filter_path(7) %></li>
+      
+                </ul>
+              </li>
+            </ul>
+          </li>
            <li>
             <%= link_to "About", about_path %>
           </li>

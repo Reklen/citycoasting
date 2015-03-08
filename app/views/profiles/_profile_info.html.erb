@@ -6,6 +6,7 @@
       </div>
       <div class="panel-body center">
         <%= image_tag @user.image.url(:medium), class:"img-responsive" %>
+        <br>
         <div id="user_<%= @user.id %>">
           <% if current_user.following?(@user)%>
             <%= link_to(stop_follow_user_path(@user), method: "post", remote: true, format: :json) do %> 

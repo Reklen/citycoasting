@@ -21,6 +21,8 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
 
+#Following Gem
+gem "acts_as_follower"
 
 #Gem For PostgreSQL
 gem 'pg'

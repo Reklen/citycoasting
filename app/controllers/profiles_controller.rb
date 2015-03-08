@@ -71,4 +71,30 @@ class ProfilesController < ApplicationController
       render file: 'public/404', status: 404, formats: [:html]
     end
   end
+
+  def follow
+    @user = User.find(params[:id])
+    if user_signed_in?
+      current_user.follow(@user)
+    end
+    respond_to do |format|
+      #format.html { redirect_to(:back)}
+      format.js
+      format.json { render json: @user.to_json} 
+    end
+  end
+
+  def stop_follow
+    @user = User.find(params[:id])
+    if user_signed_in?
+      current_user.stop_following(@user)
+    end
+    respond_to do |format|
+      #format.html { redirect_to(:back)}
+      format.js
+      format.json { render json: @user.to_json} 
+    end
+  end
+
+
 end

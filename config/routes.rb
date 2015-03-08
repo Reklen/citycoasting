@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     member { post :vote }
   end
 
+  #User Follow routes
+  post '/users/:id/follow', to: 'profiles#follow', as: 'follow_user'
+  post '/users/:id/stop_follow', to: 'profiles#stop_follow', as: 'stop_follow_user'
+
 #FB Login
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "user_registrations" }
 

@@ -1,0 +1,29 @@
+<div class = "row">
+	<div class ="col-md-3">
+    <div class = "panel panel-default center" id = "profile_nav">
+      <div class="panel-heading">
+        <h1><%= @user.username %></h1>
+      </div>
+      <div class="panel-body center">
+        <%= image_tag @user.image.url(:medium), class:"img-responsive" %>
+        <div id="user_<%= @user.id %>">
+          <% if current_user.following?(@user)%>
+            <%= link_to(stop_follow_user_path(@user), method: "post", remote: true, format: :json) do %> 
+              <button class="btn btn-block btn-success">Follow</button>
+            <% end %>
+          <% else %>
+            <%= link_to(follow_user_path(@user), method: "post", remote: true, format: :json) do %>
+              <button class="btn btn-block btn-default">Follow</button>
+            <% end %>
+          <% end %>
+        </div>
+        <hr>
+        <div class = "pull-left">
+          <%= @stamps.count %> Stamps
+        </div>
+        <div class = "pull-right">
+          <%= @posts.count %> Posts
+        </div>
+      </div>
+    </div>
+  </div>

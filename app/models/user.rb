@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => ActionController::Base.helpers.asset_path('default_profile.svg')
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   
+  acts_as_followable
+  acts_as_follower
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -48,6 +50,8 @@ class User < ActiveRecord::Base
     eval = evaluations.where(target_type: stamp.class, target_id: stamp.id).first
     eval.present? && eval.value <= 0 ? true: false
   end
+
+
   has_many :stamps
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true

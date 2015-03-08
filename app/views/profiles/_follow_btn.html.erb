@@ -1,0 +1,11 @@
+<div id="user_<%= @user.id %>">
+  <% if current_user.following?(@user)%>
+    <%= link_to(stop_follow_user_path(@user), method: "post", remote: true, format: :json) do %> 
+      <button class="btn btn-block btn-success">Follow</button>
+    <% end %>
+  <% else %>
+    <%= link_to(follow_user_path(@user), method: "post", remote: true, format: :json) do %>
+      <button class="btn btn-block btn-default">Follow</button>
+    <% end %>
+  <% end %>
+</div>

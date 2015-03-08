@@ -1,0 +1,19 @@
+<div class= "vote_icon" id="stamp_<%= @stamp.id %>">
+  <% if user_signed_in? %>
+    <% if @stamp.evaluations.find_by(source_id: current_user.id) != nil %>
+      <% if @stamp.evaluations.find_by(source_id: current_user.id).value > 0 %>
+        <%= link_to(vote_stamp_path(@stamp, type: "down"), method: "post", remote: true, format: :json) do %>
+          <button class="btn btn-lg btn-primary stamp_layover_selected center">STAMP</button>
+        <% end %>
+      <% else %>
+        <%= link_to(vote_stamp_path(@stamp, type: "up"), method: "post", remote: true, format: :json) do %> 
+          <button class="btn btn-lg btn-primary stamp_layover center">STAMP</button>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= link_to(vote_stamp_path(@stamp, type: "up"), method: "post", remote: true, format: :json) do %> 
+        <button class="btn btn-lg btn-primary stamp_layover center">STAMP</button>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

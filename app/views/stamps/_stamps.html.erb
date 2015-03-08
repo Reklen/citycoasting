@@ -28,7 +28,9 @@
           <div class = "pull-left text-left">
             <strong><%= stamp.name if stamp.name %></strong><br>
             by <%= link_to stamp.user.username, profile_path(stamp.user.username) if stamp.user %> |
-            <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %> 
+            <div class id = "stamp_count_<%= stamp.id %>">
+              <%= pluralize stamp.reputation_for(:votes).to_i, "stamp" %>
+            </div>
           </div>
           <div class = "pull-right text-left">
             <p><%= stamp.category.name if stamp.category %><br>

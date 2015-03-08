@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
                             email:auth.info.email,
                             password:Devise.friendly_token[0,20],
                             username:auth.info.name,
-                            image: ("https://graph.facebook.com/#{auth.uid}/picture?type=height=300&width=300" if auth.info.image?)
+                            image: ("https://graph.facebook.com/#{auth.uid}/picture?height=300&width=300" if auth.info.image?)
                           )
       end    
     end

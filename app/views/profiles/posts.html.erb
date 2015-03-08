@@ -16,9 +16,9 @@
         </li>
       </ul>
 
-    <% if @stamps %>
+    <% if @posts %>
       <div id="profile_stamps" class="transitions-enabled"> 
-        <% @stamps.each do |stamp| %>
+        <% @posts.each do |stamp| %>
           <div class="box panel panel-default col-md-4" id="profile_stamp_box" >
             <div class = "center">
               <%= link_to image_tag(stamp.image.url(:medium)), stamp  %>

@@ -1,12 +1,11 @@
 class ProfilesController < ApplicationController
- 
+
   def stamps
-  	
-		@user = User.find_by_username(params[:id])
-  	
+		@user = User.find_by_username(params[:id])  	
 		if @user
 			#@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
+      @posts = @user.stamps
       @stamps = Stamp.evaluated_by(:votes, @user)
 
       respond_to do |format|
@@ -20,11 +19,11 @@ class ProfilesController < ApplicationController
 
   def posts
     @user = User.find_by_username(params[:id])
-    
     if @user
       #@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
-      @stamps = @user.stamps
+      @posts = @user.stamps
+      @stamps = Stamp.evaluated_by(:votes, @user)
 
       respond_to do |format|
         format.html
@@ -37,10 +36,10 @@ class ProfilesController < ApplicationController
 
   def cities
     @user = User.find_by_username(params[:id])
-    
     if @user
       #@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
+      @posts = @user.stamps
       @stamps = Stamp.evaluated_by(:votes, @user)
 
       respond_to do |format|

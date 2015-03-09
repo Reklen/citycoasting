@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
 			#@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
       @posts = @user.stamps
-      @stamps = Stamp.evaluated_by(:votes, @user)
+      @stamps = Stamp.evaluated_by(:votes, @user).join(:evaluations).where("votes > 0")
       @cities = []
       @stamps.each do |stamp|
         unless @cities.include?(stamp)
@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
       #@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
       @posts = @user.stamps
-      @stamps = Stamp.evaluated_by(:votes, @user)
+      @stamps = Stamp.evaluated_by(:votes, @user).join(:evaluations).where("votes > 0")
       @cities = []
       @stamps.each do |stamp|
         unless @cities.include?(stamp)
@@ -54,7 +54,7 @@ class ProfilesController < ApplicationController
       #@stamps = @user.stamps.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
       #@stamps = Stamp.find_with_reputation(:votes,:all,order: 'votes desc')
       @posts = @user.stamps
-      @stamps = Stamp.evaluated_by(:votes, @user)
+      @stamps = Stamp.evaluated_by(:votes, @user).join(:evaluations).where("votes > 0")
       @cities = []
       @stamps.each do |stamp|
         unless @cities.include?(stamp)

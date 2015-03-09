@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
                             username:auth.info.name,
                             image: ("https://graph.facebook.com/#{auth.uid}/picture?height=300&width=300" if auth.info.image?)
                           )
+      
       end    
     end
   end

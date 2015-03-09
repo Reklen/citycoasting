@@ -21,6 +21,8 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
 
+gem 'geocoder'
+
 #Following Gem
 gem "acts_as_follower"
 

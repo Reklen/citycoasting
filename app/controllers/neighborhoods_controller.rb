@@ -32,6 +32,6 @@ class NeighborhoodsController < ApplicationController
   end
   
   def neighborhood_params
-      params.require(:neighborhood).permit(:name) if params[:neighborhood]
+      params.require(:neighborhood).permit(:name, :city_id) if params[:neighborhood]
   end
 end

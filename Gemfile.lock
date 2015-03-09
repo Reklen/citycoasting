@@ -91,7 +91,6 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-    geocoder (1.2.7)
     gon (5.0.4)
       actionpack (>= 2.3.0)
       json
@@ -241,7 +240,6 @@ DEPENDENCIES
   devise (~> 3.2.4)
   figaro
   font-awesome-rails
-  geocoder
   gon
   jbuilder (~> 2.0)
   jquery-rails

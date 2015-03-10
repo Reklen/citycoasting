@@ -1,7 +1,7 @@
 production:
-  cloud_name: ENV['CLOUDINARY_NAME']
-  api_key: ENV['CLOUDINARY_KEY']
-  api_secret: ENV['CLOUDINARY_SECRET']
+  cloud_name: hack
+  api_key: '249188763782619'
+  api_secret: GrzOfhAeNfqU6rOkZTjYEM0izHI
   enhance_image_tag: true
   static_image_support: true
 

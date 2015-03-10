@@ -3,9 +3,12 @@
 <%= render 'form' %>
 
 <h2> Current Neighborhoods </h2>
-<% @neighborhoods.each do |neighborhood| %>
-	<%= neighborhood.name %><br>
-
+<% @cities.each do |city| %>
+	<h3><%= city.name %></h3>
+	<% city.neighborhoods.each do |neighborhood| %>
+		<%= neighborhood.name %><br>
+	<% end %>
+	<br>
 <% end %>
 <br>
 <br>

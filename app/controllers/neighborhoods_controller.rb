@@ -10,6 +10,7 @@ class NeighborhoodsController < ApplicationController
   def new
     @neighborhood = Neighborhood.new(neighborhood_params)
     @neighborhoods = Neighborhood.all
+    @cities = City.all
 
   end
 

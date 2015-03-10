@@ -9,7 +9,8 @@
     <div class="col-md-6">
       <%= link_to(city_path(15)) do %>
           <div class="city">
-            <img src ="http://www.aisweekwithoutwalls.com/wp-content/uploads/2014/10/Louvre-Museum-Paris.jpg" >
+            <%= cl_image_tag("citycoasting/cities/Paris.jpg") %>
+            
             <h1><strong>Paris</strong></h1>
           </div>
       <% end %>

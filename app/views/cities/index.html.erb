@@ -7,11 +7,10 @@
 
   <div class = "row city-group">
     <div class="col-md-6">
-      <%= link_to(city_path(15)) do %>
+      <%= link_to(city_path(12)) do %>
           <div class="city">
-            <%= cl_image_tag("citycoasting/cities/Paris.jpg") %>
-            
-            <h1><strong>Paris</strong></h1>
+            <img src ="http://d1kcl3yiuixneo.cloudfront.net/wp-content/uploads/street-rome-italy-171146473.jpg" >
+            <h1><strong>Rome</strong></h1>
           </div>
       <% end %>
     </div>
@@ -27,10 +26,10 @@
 
   <div class = "row city-group">
     <div class="col-md-6">
-      <%= link_to(city_path(12)) do %>
+      <%= link_to(city_path(15)) do %>
           <div class="city">
-    		  	<img src ="http://d1kcl3yiuixneo.cloudfront.net/wp-content/uploads/street-rome-italy-171146473.jpg" >
-    		  	<h1><strong>Rome</strong></h1>
+            <%= cl_image_tag("citycoasting/cities/Paris.jpg") %>
+    		  	<h1><strong>Paris</strong></h1>
           </div>
   		<% end %>
     </div>
@@ -81,7 +80,7 @@
       <%= link_to(city_path(5)) do %>
           <div class="city">
             <img src ="http://www.layoverguide.com/wp-content/uploads/2010/12/Victorian-homes-on-Steiner-Street-and-the-San-Francisco-skyline-from-Alamo-Square-Park.jpg" >
-            <h1><strong>San Francisco</strong></h1>
+            <h1><strong>San<br>Francisco</strong></h1>
           </div>
       <% end %>
     </div>
@@ -89,7 +88,7 @@
       <%= link_to(city_path(3)) do %>
           <div class="city">
             <img src ="http://venicebeach.com/wp-content/uploads/2012/06/569760899_szCc7-M-17.jpg" >
-            <h1><strong>Los Angeles</strong></h1>
+            <h1><strong>Los<br>Angeles</strong></h1>
           </div>
       <% end %>
     </div>

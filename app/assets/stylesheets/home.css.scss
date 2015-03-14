@@ -10,7 +10,7 @@
     //background-attachment: fixed;
     background-position: 90% 60%; 
     background-size: 105%;
-	height: 550px;
+	height: 600px;
 	margin: 0 auto;
 	position:relative;
 
@@ -22,19 +22,19 @@
 .jumbotron .jumbo_content{
 
 	position:relative;
-	top:60px;
+	top:100px;
 }
 
 .jumbotron h1{
 	color:white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	//text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 
 }
 
 .jumbotron p{
 	color:white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	//text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
  .navbar.transparent.navbar-inverse .navbar-inner {

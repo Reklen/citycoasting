@@ -41,16 +41,20 @@
 	  </div>
 	  
 		<div class ="container">
-
-	    
+				<br>
+	    	<%= render 'home/how_it_works_sect' %><br><br><hr>
 				<h1 class ="center">Start your Trip</h1>
 				<h3 class="center">“Buy the ticket, take the ride” – Hunter S. Thompson</h3><br>
 				<!-- Button trigger modal -->
-				<%= render 'home/cities_sect' %><br>
+				<%= render 'home/cities_sect' %><br><br><hr>
 				<h1 class="center">Featured Places</h1>
-				<h3 class="center">See what is trending all over the world.</h3>
-				<%= render 'home/featured_stamps_sect' %>
-				<%= render 'home/how_it_works_sect' %>
+				<h3 class="center">See what's trending all over the world.</h3>
+				<div id="stamps" class="row">	
+  				<%= render 'stamps/stamps' %>
+				</div>
+				<%= will_paginate @stamps %>
+				<%= link_to "Keep Discovering", cities_path, class:"btn btn-lg btn-primary btn-block" %>
+				<br><br>
 
 
 

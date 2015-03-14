@@ -1,0 +1,73 @@
+<nav class="navbar navbar-scroll navbar-inverse navbar-fixed-top" role="navigation">
+  <div class = "container">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "citycoasting <beta>", root_path, class: "navbar-brand" %>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Cities", cities_path %></li>
+          <li class="dropdown">
+            <a href="#"  role="menu" aria-expanded="false">Explore<span class="caret"></span></a>
+            <ul class="dropdown-menu multi-level" role="menu">
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">Categories</a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Eat", category_filter_path(1) %></li>
+                  <li><%= link_to "Drink", category_filter_path(2) %></li>
+                  <li><%= link_to "Stay", category_filter_path(3) %></li>
+                  <li><%= link_to "Shop", category_filter_path(4) %></li>
+                  <li><%= link_to "Explore", category_filter_path(5) %></li>
+                 <!--  <li><%#= link_to "Event", category_filter_path(6) %></li> no events at the moment--> 
+                  <li><%= link_to "Coffee", category_filter_path(7) %></li>
+      
+                </ul>
+              </li>
+            </ul>
+          </li>
+           <li>
+            <%= link_to "About", about_path %>
+          </li>
+          <li>
+              <%= link_to new_stamp_path do %>
+               <span class="glyphicon glyphicon-plus"></span>
+              <% end %>
+          </li>
+          
+          <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></li>
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li class = "btn-mini btn-primary">
+                <%= link_to "Profile" , profile_path(current_user.username), class: "profile-btn" %>
+            </li>
+            <li class="dropdown">
+              
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Settings", edit_user_registration_path %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                </ul>
+            </li>
+          <% else %>
+            <li>
+             <button type="button" class="btn-inverse btn-primary" data-toggle="modal" data-target="#myModal" id="modal_btn"> Sign Up </button>
+            </li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+ <!-- /.container-fluid -->
+  </div>
+</nav>

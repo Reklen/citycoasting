@@ -1,0 +1,31 @@
+<div class = "row city-group">
+    <div class="col-md-4">
+      <%= link_to(city_path(2)) do %>
+          <div class="city">
+            <img src ="https://s-media-cache-ak0.pinimg.com/originals/91/62/a8/9162a8c677fc0417bc40e4dafd192c0b.jpg" >
+            <h1><strong>Chicago</strong></h1>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to(city_path(5)) do %>
+          <div class="city">
+            <img src ="http://www.layoverguide.com/wp-content/uploads/2010/12/Victorian-homes-on-Steiner-Street-and-the-San-Francisco-skyline-from-Alamo-Square-Park.jpg" >
+            <h1><strong>San<br>Francisco</strong></h1>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to(city_path(3)) do %>
+          <div class="city">
+            <img src ="http://venicebeach.com/wp-content/uploads/2012/06/569760899_szCc7-M-17.jpg" >
+            <h1><strong>Los<br>Angeles</strong></h1>
+          </div>
+      <% end %>
+    </div>
+  </div>
+<div class ="row">
+	<div class="col-md-offset-3 col-md-6 center">
+		<%= link_to "See all Cities", cities_path, class:"btn btn-primary btn-block" %>
+	</div>
+</div>

@@ -3,13 +3,13 @@
 
 $body-bg:                                                   #ecf0f1;
 $font-family-sans-serif:                'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:                                        45px;
+$navbar-height:                                        40px;
 // $navbar-default-bg:                          #22475E;
 $navbar-default-brand-color:      #ecf0f1;
 
 //$navbar-inverse-link-color-: white;
 //$brand-primary:                                    #75B08A;
-$jumbotron-bg:                                         white;
+// $jumbotron-bg:                                         white;
 
 
 @import 'bootstrap';
@@ -27,11 +27,9 @@ $jumbotron-bg:                                         white;
 .navbar-brand {
      font-weight: bold;
 }
-.jumbotron{
-	text-align:center;
-}
-body {
-	padding-top: 60px;
+
+.content {
+	 padding-top: 60px;
 }
 
 

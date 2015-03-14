@@ -21,7 +21,8 @@
 	</head>
 	<body data-no-turbolink>
 	  
-		<%= render 'layouts/header' %>
+		<%= render 'layouts/header_noscroll' %>
+		<%= render 'layouts/header_scroll' %>
 
 		<% unless user_signed_in? %>
 		<%= render 'layouts/modal2' %>
@@ -33,24 +34,25 @@
 	    	<%# flash.each do |name, msg| %>
 					<%#= content_tag(:div, msg, class: "alert alert-info") %>
 			<%# end %>
-	    	<h1>Explore the World</h1>
-	    	<p>Travel recommendations curated by locals and fellow travelers.</p></br>
-	    	<%= link_to "Select A Destination", cities_path, class:"btn btn-danger btn-lg" %>
+	    	<h1><strong>Explore the World</strong></h1>
+	    	<p><strong>Travel recommendations curated by locals and fellow travelers.</strong></p></br>
+	    	<%= link_to "Select A Destination", cities_path, class:"btn btn-primary btn-lg" %>
 	    </div>
 	  </div>
 	  
 		<div class ="container">
 
 	    
-				<h1 class ="center">Featured Places</h1>
-				<%= render 'stamps/home' %>
+				<h1 class ="center">Start your Trip</h1>
+				<h3 class="center">“Buy the ticket, take the ride” – Hunter S. Thompson</h3><br>
 				<!-- Button trigger modal -->
+				<%= render 'home/cities_sect' %><br>
+				<h1 class="center">Featured Places</h1>
+				<h3 class="center">See what is trending all over the world.</h3>
+				<%= render 'home/featured_stamps_sect' %>
+				<%= render 'home/how_it_works_sect' %>
 
-				<div id="stamps" class="row">	
-				  <%= render 'stamps/stamps' %>
-				</div>
 
-				<%= will_paginate @stamps %>
 
 		</div>
 

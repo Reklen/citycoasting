@@ -38,7 +38,7 @@
           </div>
           <div class = "pull-right text-left">
             <p><%= stamp.category.name if stamp.category %><br>
-            <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= link_to stamp.city.name, city_path(stamp.city.name) if stamp.city %></p>
+            <%= stamp.neighborhood.name if stamp.neighborhood %>, <%= link_to stamp.city.name, city_path(stamp.city.slug) if stamp.city %></p>
           </div>
         </div>
       </div>

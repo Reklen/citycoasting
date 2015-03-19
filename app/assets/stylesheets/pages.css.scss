@@ -4,18 +4,27 @@
 
 
 #modal_btn{
-	position:relative;
-	top:6.5px;
-	right:10px;
+	// position:relative;
+	// top:6.5px;
+	// right:10px;
 }
 .navbar-noscroll #modal_btn{
-	position:relative;
-	top:15px;
+
 	//right:10px;
-	padding:5px;
-	border:solid 3px none;
-	border-radius:0;
-	width:120px;
+	 padding:10px;
+	 border:solid 2px white;
+	 border-radius:0;
+	 background-color:transparent;
+	 width:120px;
+}
+
+.navbar-noscroll #modal_btn:hover{
+
+	background-color:white;
+	color:black;
+
+
+
 }
 .btn-primary{
 	border:solid 3px none;

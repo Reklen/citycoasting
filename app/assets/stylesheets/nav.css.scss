@@ -2,15 +2,23 @@
 
 .navbar-noscroll{
     position:absolute;
-    z-index:15;
+    z-index:3;
+    width:100%;
 }
 
 .navbar-noscroll a{
-    position:relative;
-    top:10px;
-    left:70px;
+
+    // position:relative;
+    // top:10px;
+    // left:70px;
+    // color:white;
+    // font-size:25px;
+
+}
+
+.navbar-noscroll .navbar-header a{
     color:white;
-    font-size:25px;
+    padding:12px;
 
 }
 
@@ -20,13 +28,15 @@
     background-color:none;
 }
 .navbar-noscroll a button{
-    position:relative;
-    top:110px;
+    // position:relative;
+    // top:110px;
 }
 
 .navbar-noscroll a{
     text-decoration:none;
 }
+
+
 
 
 .dropdown-submenu {

@@ -22,6 +22,7 @@ gem "cancan"
 gem "gon"
 
 gem 'cloudinary'
+gem 'friendly_id', '~> 5.1.0'
 
 #Following Gem
 gem "acts_as_follower"

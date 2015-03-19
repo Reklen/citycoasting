@@ -12,10 +12,9 @@
         <div class="pull-right">
     			<%= render 'stamps/pricerange_key', :stamp => @stamp %> |
           <%= @stamp.category.name if @stamp.category %> |
-          <%= pluralize @stamp.reputation_for(:votes).to_i, "stamps" %>
+          <%#= pluralize @stamp.reputation_for(:votes).to_i, "stamps" %>
         </div>
       </div>
-
 	  </div>
 
 	  <div class="panel panel-default">
@@ -23,7 +22,6 @@
 				Comments
 			</div>
 			<div class="panel-body body">
-				
 				<%= form_for [@stamp, @comment], html: {multipart: true} do |f| %>
 					<div class="form-group">
     				<%= f.text_area :comment, class: "form-control", placeholder: "Write a comment..." %>

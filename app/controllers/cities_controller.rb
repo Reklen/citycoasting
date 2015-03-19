@@ -6,7 +6,8 @@ class CitiesController < ApplicationController
   end
 
   def show
-  	@city = City.find(params[:id])
+  	@city = City.friendly.find(params[:id])
+    
   	gon.city_instance_id = @city.id
   	
   	if params[:category_id]
@@ -39,7 +40,7 @@ class CitiesController < ApplicationController
 
   private
   def set_city
-      @city = City.find(params[:id])
+      @city = City.friendly.find(params[:id])
   end
   
   def city_params

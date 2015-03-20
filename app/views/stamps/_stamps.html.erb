@@ -8,16 +8,16 @@
             <% if user_signed_in? %>
               <% if stamp.evaluations.find_by(source_id: current_user.id) != nil %>
                 <% if stamp.evaluations.find_by(source_id: current_user.id).value > 0 %>
-                  <%= link_to(vote_stamp_path(stamp, type: "down"), method: "post", remote: true, format: :json) do %>
+                  <%= link_to(vote_stamp_path(stamp.id, type: "down"), method: "post", remote: true, format: :json) do %>
                     <button class="btn btn-lg btn-primary stamp_layover_selected center"><strong>STAMP</strong></button>
                   <% end %>
                 <% else %>
-                  <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post", remote: true, format: :json) do %> 
+                  <%= link_to(vote_stamp_path(stamp.id, type: "up"), method: "post", remote: true, format: :json) do %> 
                     <button class="btn btn-lg btn-primary stamp_layover center"><strong>STAMP</strong></button>
                   <% end %>
                 <% end %>
               <% else %>
-                <%= link_to(vote_stamp_path(stamp, type: "up"), method: "post", remote: true, format: :json) do %> 
+                <%= link_to(vote_stamp_path(stamp.id, type: "up"), method: "post", remote: true, format: :json) do %> 
                   <button class="btn btn-lg btn-primary stamp_layover center"><strong>STAMP</strong></button>
                 <% end %>
               <% end %>

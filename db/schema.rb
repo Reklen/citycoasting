@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314223528) do
+ActiveRecord::Schema.define(version: 20150320002126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,10 +151,12 @@ ActiveRecord::Schema.define(version: 20150314223528) do
     t.string   "formatted_address"
     t.integer  "city_id"
     t.integer  "rank"
+    t.string   "slug"
   end
 
   add_index "stamps", ["category_id"], name: "index_stamps_on_category_id", using: :btree
   add_index "stamps", ["city_id"], name: "index_stamps_on_city_id", using: :btree
+  add_index "stamps", ["slug"], name: "index_stamps_on_slug", unique: true, using: :btree
   add_index "stamps", ["user_id"], name: "index_stamps_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

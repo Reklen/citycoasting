@@ -7,7 +7,7 @@
 				<div class = "pull-left">
 					<strong><%= @stamp.name if @stamp.name %></strong>
 					<p>by <%= link_to @stamp.user.username, profile_path(@stamp.user.username) if @stamp.user %>|
-						<%= link_to "Stamp", vote_stamp_path(@stamp, type: "up"), method: "post" %> </p>
+						<%= link_to "Stamp", vote_stamp_path(@stamp.id, type: "up"), method: "post" %> </p>
         </div>
         <div class="pull-right">
     			<%= render 'stamps/pricerange_key', :stamp => @stamp %> |

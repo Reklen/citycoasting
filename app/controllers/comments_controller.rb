@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-  	@stamp = Stamp.find(params[:stamp_id])
+  	@stamp = Stamp.friendly.find(params[:stamp_id])
   	@comment = @stamp.comments.new(comment_params)
     if user_signed_in? 
       @comment.user_id = current_user.id

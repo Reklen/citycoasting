@@ -18,7 +18,4 @@ class Stamp < ActiveRecord::Base
 	validates :image, presence: true
 	validates :category, presence: true
 	validates :price_range, presence: true
-
-	extend FriendlyId
-  friendly_id :name, use: :slugged
 end

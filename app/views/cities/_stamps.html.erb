@@ -3,7 +3,7 @@
     <div class="box panel panel-default">
       <div class = "center">
         <div class = "stamp_img">
-          <%= link_to image_tag(stamp.image.url(:rendered)), stamp %>
+          <%= link_to image_tag(stamp.image.url(:rendered)), stamp_path(stamp.id) %>
           <div class= "vote_icon" id="stamp_<%= stamp.id %>">
             <% if user_signed_in? %>
               <% if stamp.evaluations.find_by(source_id: current_user.id) != nil %>

@@ -28,7 +28,7 @@ class StampsController < ApplicationController
     gon.latcoord = @stamp.adr_coord_lat
     gon.lngcoord = @stamp.adr_coord_lng
 
-    @stamp = Stamp.friendly.find(params[:id])
+    @stamp = Stamp.find(params[:id])
     @comment = @stamp.comments.new(user_id: current_user)
     @comments = @stamp.comments.recent.limit(10).all
 
@@ -125,7 +125,7 @@ class StampsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stamp
-      @stamp = Stamp.friendly.find(params[:id])
+      @stamp = Stamp.find(params[:id])
     end
 
     def correct_user

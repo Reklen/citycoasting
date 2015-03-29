@@ -51,9 +51,11 @@ class StampsController < ApplicationController
     respond_to do |format|
       if @stamp.save
         format.html { redirect_to @stamp, notice: 'Stamp was successfully created.' }
+        format.js
         format.json { render :show, status: :created, location: @stamp }
       else
         format.html { render :new }
+        format.js
         format.json { render json: @stamp.errors, status: :unprocessable_entity }
       end
     end

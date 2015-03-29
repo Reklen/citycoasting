@@ -1,3 +1,8 @@
+$(document).ready( function () {
+  
+  alert("Hello, world")
+  
+}); 
 jQuery(function() {
   var neighborhoods;
   $('#stamp_neighborhood_id').parent().hide();

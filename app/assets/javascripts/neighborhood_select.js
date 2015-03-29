@@ -1,9 +1,4 @@
-$(document).ready( function () {
-  
-  alert("Hello, world")
-  
-}); 
-jQuery(function() {
+$(window).load(function() {
   var neighborhoods;
   $('#stamp_neighborhood_id').parent().hide();
   neighborhoods = $('#stamp_neighborhood_id').html();

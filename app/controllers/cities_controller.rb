@@ -8,7 +8,7 @@ class CitiesController < ApplicationController
   def show
   	@city = City.friendly.find(params[:id])
 
-    @city_img = city_header_img(@city.id)
+    #@city_img = city_header_img(@city.id)
     
   	gon.city_instance_id = @city.id
   	

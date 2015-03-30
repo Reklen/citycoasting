@@ -21,6 +21,9 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 gem "gon"
 
+#Search capabilities
+gem 'ransack'
+
 gem 'cloudinary'
 gem 'friendly_id', '~> 5.1.0'
 

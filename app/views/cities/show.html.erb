@@ -1,15 +1,21 @@
 <div class = "row">
-	<div class ="col-md-12">
-	<div class = "center">
+	<div class ="col-md-12 center">
 		<h1><%= @city.name %></h1>
+    <br>
 	</div>
-<div>
-	<ul class ="form-group"><%= select_tag "Categories",options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), prompt:"Everything", id: "category_city_select", class: "form-control btn dropdown-toggle" %>
-	</ul>
+  <%= search_form_for @search, url: city_path(@city.slug), html: { method: :get, class:"form-group" } do |f| %>
+    <div class ="col-md-6">
+      <%= f.collection_select(:neighborhood_id_eq, Neighborhood.where(city_id: @city.id), :id, :name, {:include_blank => "Select a Neighborhood"}, {:onchange => "this.form.submit()", class:"form-control"} ) %>
+    </div>
+    <div class ="col-md-6">
+      <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {:include_blank => "Select a Category"}, {:onchange => "this.form.submit()", class:"form-control"}) %>
+      <br>
+    </div>
+  <% end %>
 </div>
-	</div>
-</div>
+
 <div id="stamps" class="row">	
   <%= render 'cities/stamps' %>
 </div>
+
 <%= will_paginate @stamps %>

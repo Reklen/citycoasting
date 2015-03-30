@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   #get 'cities/:id', to: 'cities#show', as: 'cities'
   resources :cities
+  
   resources :neighborhoods
 
   get 'profiles/show'
@@ -31,7 +32,8 @@ Rails.application.routes.draw do
 
   get 'explore/(:category_id)', to: 'stamps#explore', as: 'category_filter'
 
-  get 'cities/(:id)/(:category_id)', to: 'cities#show', as: 'city_category_filter'
+  # get 'cities/(:id)/(:category_id)', to: 'cities#show', as: 'city_category_filter'
+  #get 'cities/(:id)/(:neighborhood_id)', to: 'cities#show', as: 'city_neighborhood_filter'
 
 
   get ':id', to: 'profiles#stamps', as: 'profile'

@@ -14,6 +14,8 @@ class ProfilesController < ApplicationController
         end
       end
       @cities = @cities.uniq{|x| x.id}
+      
+      @search = Stamp.where(city_id: @city.id).search(params[:q])
 
       respond_to do |format|
         format.html

@@ -16,6 +16,11 @@
         </li>
       </ul>
     </div>
+     <%= search_form_for @search, url: profile_path(@user.username), html: { method: :get, class:"form-group" } do |f| %>
+      <div class ="col-md-6">
+        <%= f.collection_select(:city_id_eq, @cities), :id, :name, {:include_blank => "Select a City"}, {:onchange => "this.form.submit()", class:"form-control"} ) %>
+      </div>
+    <%end%>
     <% if @stamps %>
       <div id="profile_stamps" class="transitions-enabled"> 
         <% @stamps.each do |stamp| %>
